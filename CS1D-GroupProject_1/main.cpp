@@ -1,5 +1,6 @@
 #include "header.h"
 
+
 int main()
 {
 
@@ -10,8 +11,7 @@ int main()
 	//This code has not been modified yet and it will probably take me a
 	//bit of time to get it working completely as I would like it to.
 
-
-
+	cout << "This is a simple test";
 
 
 

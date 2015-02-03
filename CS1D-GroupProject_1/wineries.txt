@@ -1,6 +1,6 @@
-name of winery: Adelaida Cellars
-winery number 1
-distance to other wineries - 10 
+Adelaida Cellars
+1
+10 
 1 0.0 
 2 13.2
 3 15.4
