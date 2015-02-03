@@ -1,0 +1,243 @@
+name of winery: Adelaida Cellars
+winery number 1
+distance to other wineries - 10 
+1 0.0 
+2 13.2
+3 15.4
+4 11.5
+5 13.3
+6 15.2
+7 5.8
+8 6.9
+9 11.2
+10 3.5
+8 miles to Canyon Villa 
+3 wines offered
+Cabernet Sauvignon
+2000
+22.50
+Zinfandel
+2002
+14.00
+Old Vines Zinfandel
+2001
+19.50
+
+name of winery: Castoro Cellars
+winery number 2
+distance to other wineries - 10  
+1 13.2
+2 0.0
+3 15.1
+4 14.8
+5 0.1
+6 4.2
+7 10.3
+8 9.3
+9 5.2
+10 11.0
+4.29 miles to Canyon Villa 
+4 wines offered
+Sauvignon Blanc
+2002
+12.50
+Estate Chardonnay
+2001
+18.00
+Zinfandel
+2002
+16.00
+Late Harvest Zinfandel
+2001
+22.50
+
+name of winery: Chumeia
+winery number 3
+distance to other wineries - 10  
+1 15.4
+2 15.1
+3 0.0
+4 4.3
+5 16.1
+6 14.3
+7 18.4
+8 18.3
+9 17.2
+10 17.2
+12.41 miles to Canyon Villa 
+2 wines offered
+Voignier
+2002
+9.50
+Pinot Noir
+2001
+16.00
+
+name of winery: Eberle Winery
+winery number 4
+distance to other wineries - 10   
+1 11.5
+2 14.8
+3 4.3
+4 0.0
+5 8.1
+6 9.4
+7 14.4
+8 14.3
+9 13.2
+10 13.2
+7.56 miles to Canyon Villa 
+3 wines offered
+Estate Cabernet Sauvignon
+2000
+25.00
+Zinfandel
+2001
+18.00
+Chardonnay
+2002
+20.00
+
+name of winery: Jan Kris Winery
+winery number 5
+distance to other wineries - 10 
+1 13.3
+2 0.1
+3 16.1
+4 8.1
+5 0.0
+6 4.5
+7 8.5
+8 8.4
+9 5.1
+10 12.1
+2.67 miles to Canyon Villa 
+2 wines offered
+Zinfandel
+2002
+14.50
+Zinfandel Port
+2002
+16.00
+
+name of winery: L'Aventure
+winery number 6
+distance to other wineries - 10 
+1 15.2
+2 4.2
+3 14.3
+4 9.4
+5 4.5
+6 0.0
+7 11.2
+8 11.1
+9 5.1
+10 14.2
+5.94 miles to Canyon Villa 
+1 wine offered
+Optimus
+2001
+28.00
+
+name of winery: Norman Vineyards
+winery number 7
+distance to other wineries - 10 
+1 5.8
+2 10.3
+3 18.4
+4 14.4
+5 8.5
+6 11.2
+7 0.0
+8 0.7
+9 5.8
+10 4.0
+8.44 miles to Canyon Villa 
+4 wines offered
+Barbera
+2002
+16.00
+Meritage (No Nonsense Red)
+2001
+14.50
+Zinfandel "The Classic"
+2002
+16.00
+Zinfandel "The Monster"
+2002
+16.50
+
+name of winery: Opolo Vineyards
+winery number 8
+distance to other wineries - 10 
+1 6.9
+2 9.3
+3 18.7
+4 14.3
+5 8.4
+6 11.1
+7 0.7
+8 0.0
+9 5.7
+10 4.7
+12.75 miles to Canyon Villa 
+3 wines offered
+Syrah
+2001
+18.00
+Pinot Noir
+2001
+22.00
+Zinfandel
+2002
+18.00
+
+name of winery: Pipestone Vineyards
+winery number 9
+distance to other wineries - 10 
+1 11.2
+2 5.2
+3 17.2
+4 13.2
+5 5.1
+6 5.1
+7 5.8
+8 5.7
+9 0.0
+10 9.5
+9.19 miles to Canyon Villa 
+3 wines offered
+Viognier
+2002
+12.50
+Syrah
+2001
+15.00
+Syrah
+2002
+16.50
+
+name of winery: Tablas Creek Vineyard
+winery number 10
+distance to other wineries - 10 
+1 3.5
+2 11.0
+3 17.2
+4 13.2
+5 12.1
+6 14.2
+7 4.0
+8 4.7
+9 9.5
+10 0.0
+14.54 miles to Canyon Villa 
+3 wines offered
+Roussane
+2002
+14.50
+Cote de Blanc
+2002
+15.00
+Cote de Rouge
+2001
+18.00
