@@ -1,6 +1,7 @@
 #include "accountsheader.h"
 
 //Talon sucks major ****
+//TALON JUST SUCKS
 
 //Creating an account will generate a queue of account names and passwords
 //	from the specified input file.
