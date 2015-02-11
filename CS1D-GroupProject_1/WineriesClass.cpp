@@ -1,5 +1,9 @@
 #include "WineriesHeader.h"
 
+//NOTE: When dealing with the indexes of the wineries, this code is
+//the wineries number rather than it's index. (Just for reference if
+//anyone writes more code).
+
 //This constructor will create a new Winery for every winery in the input
 //file wineries.txt, storing them all in a vector located in the Wineries
 //Class
@@ -100,7 +104,25 @@ float Wineries::distBetween(int winery1, int winery2) const
 //returns the name of the passed in winery number as a string
 string Wineries::nameOf(int wineryNumber) const
 {
-	return listOfWineries[wineryNumber - 1].name;
+	string returnStr;
+	if(isEmpty())
+	{
+		if(wineryNumber > 0 && wineryNumber <= totalWineries)
+		{
+			returnStr = listOfWineries[wineryNumber - 1].name;
+		}
+		else
+		{
+			returnStr = "::ERROR:: Invalid Winery\n\n";
+		}
+
+	}
+	else
+	{
+		returnStr = "::ERROR:: No Wineries In List\n\n";
+	}
+
+	return returnStr;
 }//end - nameOf
 
 //returns the total number of wineries
@@ -109,9 +131,40 @@ int Wineries::totWineries() const
 	return totalWineries;
 }//end - totWineries
 
+//prints the information for the winery passed in
+string Wineries::print( int wineryNumber ) const
+{
+	string returnStr;
 
+	if(isEmpty())
+	{
+		if(wineryNumber > 0 && wineryNumber <= totalWineries)
+		{
+			float distFromCV = listOfWineries[wineryNumber - 1].otherWineryDistInfo.at(1);
 
+			returnStr = "WINERY NAME....." + listOfWineries[wineryNumber - 1].name + "\n" +
+					  + "WINERY NUM......" + (char)wineryNumber + "\n" +
+					  + "DIST FROM CV...." + (string)distFromCV + "\n" +
+					  + "WINES OFFERED..." + listOfWineries[wineryNumber - 1].numWinesOffered + "\n";
+		}
+		else
+		{
+			returnStr = "::ERROR:: Invalid Winery\n\n";
+		}
+	}
+	else
+	{
+		returnStr = "::ERROR:: No Wineries In List\n\n";
+	}
 
+	return returnStr;
+}//end - print
+
+//return true is there are no wineries in the list
+bool Wineries::isEmpty( ) const
+{
+	return totalWineries == 0;
+}//end - isEmpty
 
 
 

@@ -51,10 +51,12 @@ class Wineries {
 		float distBetween(int winery1, int winery2) const;
 		//returns the name of the passed in winery number
 		string nameOf(int wineryNumber) const;
-		//prints the contents of the passed in winery number
-		string print(int wineryNumber) const; //PENDING
+		//prints the information of the passed in winery
+		string print(int wineryNumber) const;
 		//returns the total number of wineries
-		int totWineries() const;
+		int totWineries( ) const;
+		//return true if there are no wineries in the list
+		bool isEmpty( ) const;
 
 
 	private:
