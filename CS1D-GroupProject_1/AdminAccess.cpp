@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;
+
 bool AdminAccess(string attemptUser, string attemptPass)
 {
 	bool gainAccess;

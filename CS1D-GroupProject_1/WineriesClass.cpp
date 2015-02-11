@@ -135,16 +135,14 @@ int Wineries::totWineries() const
 string Wineries::print( int wineryNumber ) const
 {
 	string returnStr;
-
+	float distFromCV = listOfWineries[wineryNumber - 1].otherWineryDistInfo.at(1);
 	if(isEmpty())
 	{
 		if(wineryNumber > 0 && wineryNumber <= totalWineries)
 		{
-			float distFromCV = listOfWineries[wineryNumber - 1].otherWineryDistInfo.at(1);
-
 			returnStr = "WINERY NAME....." + listOfWineries[wineryNumber - 1].name + "\n" +
 					  + "WINERY NUM......" + (char)wineryNumber + "\n" +
-					  + "DIST FROM CV...." + (string)distFromCV + "\n" +
+					  + "DIST FROM CV...." + to_string(printf("%f2.5", distFromCV)) + "\n" +
 					  + "WINES OFFERED..." + listOfWineries[wineryNumber - 1].numWinesOffered + "\n";
 		}
 		else
