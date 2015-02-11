@@ -96,16 +96,34 @@ Wineries::~Wineries(){}
 //returns the distance between the first winery and the second winery
 float Wineries::distBetween(int winery1, int winery2) const
 {
-	//Use the value of the winery, NOT the index. This is why the list of
-	//wineries index is being subtracted by 1
-	return listOfWineries[winery1 - 1].otherWineryDistInfo.at(winery2);
-}
+	float returnDist;
+	//if the list is empty OR if number out of bounds, return -1.0
+	if(!isEmpty())
+	{
+		if((winery1 > 0 && winery1 <= totalWineries) &&
+		   (winery2 > 0 && winery2 <= totalWineries))
+		{
+			//Use the value of the winery, NOT the index. This is why the list of
+			//wineries index is being subtracted by 1
+			returnDist = listOfWineries[winery1 - 1].otherWineryDistInfo.at(winery2);
+		}
+		else
+		{
+			returnDist = -1.0;
+		}
+	}
+	{
+		returnDist = -1.0;
+	}//end - error check
+
+	return returnDist;
+}//end - distBetween
 
 //returns the name of the passed in winery number as a string
 string Wineries::nameOf(int wineryNumber) const
 {
 	string returnStr;
-	if(isEmpty())
+	if(!isEmpty())
 	{
 		if(wineryNumber > 0 && wineryNumber <= totalWineries)
 		{
@@ -131,31 +149,35 @@ int Wineries::totWineries() const
 	return totalWineries;
 }//end - totWineries
 
-//prints the information for the winery passed in
+//passes out the information for the winery passed in. passes error if out of
+//bounds of if there are no wineries in the list
 string Wineries::print( int wineryNumber ) const
 {
-	string returnStr;
+	stringstream returnStr;
 	float distFromCV = listOfWineries[wineryNumber - 1].otherWineryDistInfo.at(1);
-	if(isEmpty())
+	if(!isEmpty())
 	{
 		if(wineryNumber > 0 && wineryNumber <= totalWineries)
 		{
-			returnStr = "WINERY NAME....." + listOfWineries[wineryNumber - 1].name + "\n" +
-					  + "WINERY NUM......" + (char)wineryNumber + "\n" +
-					  + "DIST FROM CV...." + to_string(printf("%f2.5", distFromCV)) + "\n" +
-					  + "WINES OFFERED..." + listOfWineries[wineryNumber - 1].numWinesOffered + "\n";
+			returnStr << "WINERY NAME..............."
+					  << listOfWineries[wineryNumber - 1].name << "\n"
+					  << "WINERY NUM................" << wineryNumber << "\n"
+					  << "DIST FROM CV.............." << distFromCV
+					  << "\n" << "WINES OFFERED............."
+					  << listOfWineries[wineryNumber - 1].numWinesOffered
+					  << "\n";
 		}
 		else
 		{
-			returnStr = "::ERROR:: Invalid Winery\n\n";
+			returnStr << "::ERROR:: Invalid Winery\n\n";
 		}
 	}
 	else
 	{
-		returnStr = "::ERROR:: No Wineries In List\n\n";
+		returnStr << "::ERROR:: No Wineries In List\n\n";
 	}
 
-	return returnStr;
+	return returnStr.str();
 }//end - print
 
 //return true is there are no wineries in the list

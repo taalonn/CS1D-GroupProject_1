@@ -22,9 +22,6 @@ int main()
 	cout << "INFORMATION TEST...Winery No.5\n\n";
 	cout << winery1.print(5);
 
-	cout << "Is the wine list empty? " << winery1.isEmpty()? "Yes" : "No";
-
-
 
 
 
