@@ -30,5 +30,6 @@ struct Reviews
 };
 
 //PROTOTYPES
+bool AdminAccess(string attemptUser, string attemptPass);
 
 #endif /* HEADER_H_ */

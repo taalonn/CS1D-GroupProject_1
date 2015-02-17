@@ -19,6 +19,8 @@ int main()
 	cout << "which is winery 7 and 4: " << winery1.distBetween(7, 4)
 		 << " miles" << endl;
 
+	cout << "INFORMATION TEST...Winery No.5\n\n";
+	cout << winery1.print(5);
 
 
 

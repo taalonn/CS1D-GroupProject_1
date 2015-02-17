@@ -38,7 +38,7 @@
    <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="viewWinery">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -51,10 +51,10 @@
      <bool>false</bool>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>View Wineries</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="planATrip">
     <property name="geometry">
      <rect>
       <x>330</x>
@@ -64,10 +64,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Plan a Trip</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="quickTrip">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -77,10 +77,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Quick Trip</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="background">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -93,13 +93,13 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="Resource1.qrc">:/pics/vineyard pic 1.jpg</pixmap>
+     <pixmap resource="Res2.qrc">:/1/vineyard pic 1.jpg</pixmap>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
+   <zorder>background</zorder>
+   <zorder>viewWinery</zorder>
+   <zorder>planATrip</zorder>
+   <zorder>quickTrip</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -133,7 +133,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="Resource1.qrc"/>
+  <include location="Res2.qrc"/>
  </resources>
  <connections/>
 </ui>

@@ -2,6 +2,7 @@
 #define WineriesHeader_H_
 #include <queue>
 #include <string>
+#include <sstream>
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -47,15 +48,17 @@ class Wineries {
 		//eventually we will be able to add wineries
 
 //ACCESSORS///////////////////////////////////////////////////////////////////
-		//returns distance between two wineries
+		//returns distance between two wineries RETURNS -1.0 IF ERROR
 		float distBetween(int winery1, int winery2) const;
 		//returns the name of the passed in winery number
 		string nameOf(int wineryNumber) const;
 		//returns the contents of the passed in winery number (Formatted in
 		//a string)
-		string print(int wineryNumber) const; //PENDING
+		string print(int wineryNumber) const;
 		//returns the total number of wineries
-		int totWineries() const;
+		int totWineries( ) const;
+		//return true if there are no wineries in the list
+		bool isEmpty( ) const;
 
 
 	private:
