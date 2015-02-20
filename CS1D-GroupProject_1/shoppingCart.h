@@ -6,6 +6,8 @@
 #include <iomanip>
 #include <sstream>
 
+using namespace std;
+
 class shoppingCart
 {
 private:
