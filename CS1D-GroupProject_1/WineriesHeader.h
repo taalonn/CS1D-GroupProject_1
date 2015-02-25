@@ -59,9 +59,9 @@ class Wineries {
 		int totWineries( ) const;
 		//return true if there are no wineries in the list
 		bool isEmpty( ) const;
+		queue<int> findRoute(int startingWinery, int numWineries);
 
-
-	private:
+private:
 			vector<wineryInfo> listOfWineries;
 			vector<wineryInfo>::iterator it;
 			int totalWineries;

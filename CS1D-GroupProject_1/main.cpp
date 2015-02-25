@@ -22,6 +22,9 @@ int main()
 	cout << "INFORMATION TEST...Winery No.5\n\n";
 	cout << winery1.print(5);
 
+	//causing error
+//	cout << winery1.listOfWineries[1].otherWineryDistInfo[3];
+
 
 
 

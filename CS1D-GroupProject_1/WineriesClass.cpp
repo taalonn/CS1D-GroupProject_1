@@ -186,6 +186,46 @@ bool Wineries::isEmpty( ) const
 	return totalWineries == 0;
 }//end - isEmpty
 
+queue<int> Wineries::findRoute(int startingWinery, int numWineries)
+{
+	queue<int> wineryRoute;
+
+	int val;
+	int currWinery;
+	float lowDist;
+	int runsLeft;
+
+	vector<wineryInfo>::iterator it;
+
+	currWinery = startingWinery;
+	runsLeft = numWineries;
+
+	Wineries wineryCopy;
+
+	while(runsLeft > 0)
+	{
+		lowDist = 100.0;
+		for(int i = 0; i < totalWineries - 1; i++)
+		{
+			if(wineryCopy.listOfWineries[currWinery].otherWineryDistInfo.at(i) < lowDist)
+			{
+				lowDist = wineryCopy.listOfWineries[currWinery].otherWineryDistInfo.at(i);
+
+				val = i;
+				it = listOfWineries.begin() + i;
+			}
+		}
+
+
+		wineryRoute.push(val);
+		wineryCopy.listOfWineries.erase(it);
+		currWinery = val;
+		runsLeft--;
+	}
+
+
+
+}
 
 
 
