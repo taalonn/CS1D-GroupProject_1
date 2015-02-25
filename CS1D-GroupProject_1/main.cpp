@@ -25,8 +25,27 @@ int main()
 	//causing error
 //	cout << winery1.listOfWineries[1].otherWineryDistInfo[3];
 
+//	shoppingCart cart1;
+//
+//	cart1.updateOutput("wine1", 10.00, 3);
+//	cout << "Testing wine output\n\n";
+//	cout << getOutput();
 
+	queue<int> myRoute;
 
+	winery1.findRoute(1, 3, myRoute);
+
+	cout << myRoute.front();
+	myRoute.pop();
+
+	cout << myRoute.front();
+		myRoute.pop();
+
+		cout << myRoute.front();
+			myRoute.pop();
+
+			cout << myRoute.front();
+				myRoute.pop();
 
 
 
