@@ -13,11 +13,19 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    WineriesClass.cpp \
+    AdminAccess.cpp \
+    adminwindow.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    shoppingCart.h \
+    header.h \
+    WineriesHeader.h \
+    adminwindow.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    adminwindow.ui
 
 RESOURCES += \
     Resource1.qrc \
