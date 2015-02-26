@@ -230,7 +230,9 @@ Cote de Blanc
 15.00
 Cote de Rouge
 2001
-18.00Cass Winery
+18.00
+
+Cass Winery
 10
 11
 1 11.5
@@ -251,4 +253,3 @@ Roussanne
 Viognier
 2013
 12.5
-

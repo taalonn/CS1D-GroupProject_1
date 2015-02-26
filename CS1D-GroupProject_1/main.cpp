@@ -15,9 +15,7 @@ int main()
 
 	cout << "Testing printAll method\n\n";
 	cout << winery1.printAll();
-
-	cin.get();
-
+	
 	wineryInfo newWinery;
 	newWinery.name = "Cass Winery";
 	newWinery.ownNumber = 11;
@@ -41,10 +39,6 @@ int main()
 
 	newWinery.offeredWineInfo["Roussanne"].vintage = 2013 ;
 	newWinery.offeredWineInfo["Roussanne"].price = 22.50;
-
-
-
-	cin.get();
 
 	winery1.addWinery(newWinery);
 

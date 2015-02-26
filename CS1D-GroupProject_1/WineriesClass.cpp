@@ -104,9 +104,9 @@ void Wineries::addWinery(wineryInfo newWinery)
 	updateFile.open("wineries.txt", ios_base::app);
 
 	updateFile << endl << endl;
-	updateFile << newWinery.name << endl
+	updateFile << newWinery.name 	  << endl
 			   << newWinery.ownNumber << endl
-			   << totalWineries << endl;
+			   << totalWineries       << endl;
 
 	//adding the distance information
 	for(int i = 1; i <= totalWineries; i++)
@@ -115,17 +115,17 @@ void Wineries::addWinery(wineryInfo newWinery)
 				   << newWinery.otherWineryDistInfo.at(i) << endl;
 	}
 
-	updateFile << newWinery.numWinesOffered << endl;
-	map<string, bottleInfo>::iterator it;
+	updateFile << newWinery.numWinesOffered;
+	map<string, bottleInfo>::iterator it = newWinery.offeredWineInfo.begin();
 
 	//adding wine informaiton
-	for(it = newWinery.offeredWineInfo.begin();
-							it != newWinery.offeredWineInfo.end(); it++)
+	for(;it != newWinery.offeredWineInfo.end(); it++)
 	{
-		updateFile << it->first << endl
+		updateFile << endl;
+		updateFile << it->first          << endl
 				   << it->second.vintage << endl
-				   << it->second.price << endl;
-	}
+				   << it->second.price;
+	}//end - for
 
 	updateFile.close();
 
