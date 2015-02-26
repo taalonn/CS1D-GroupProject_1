@@ -38,27 +38,39 @@ struct wineryInfo
 
 class Wineries {
 	public:
-		//Default constructor
+		//Default constructor - will create a vector according to the current
+		//wineries.txt
 		Wineries();
 		//default destructor
 		virtual ~Wineries();
 
 //MUTATORS////////////////////////////////////////////////////////////////////
 
-		//eventually we will be able to add wineries
+		//this will add one new winery to the current list of wineries
+		//stored in the class AND it will update the wineries text file
+		void addWinery(wineryInfo newWinery);
 
 //ACCESSORS///////////////////////////////////////////////////////////////////
 		//returns distance between two wineries RETURNS -1.0 IF ERROR
 		float distBetween(int winery1, int winery2) const;
+
 		//returns the name of the passed in winery number
 		string nameOf(int wineryNumber) const;
+
 		//returns the contents of the passed in winery number (Formatted in
 		//a string)
 		string print(int wineryNumber) const;
+
+		//returns the contents of every winery currently in the list
+		//(formatted as a string).
+		string printAll() const;//NOT YET IMPLEMENTED
+
 		//returns the total number of wineries
 		int totWineries( ) const;
+
 		//return true if there are no wineries in the list
 		bool isEmpty( ) const;
+
 		void findRoute(int startingWinery,
 					   int numWineries, queue<int>& myQueue);
 

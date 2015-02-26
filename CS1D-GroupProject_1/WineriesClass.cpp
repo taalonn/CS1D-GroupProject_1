@@ -90,7 +90,46 @@ Wineries::~Wineries(){}
 
 ////MUTATORS//////////////////////////////////////////////////////////////////
 
-	//eventually we will be able to add wineries
+//pushing the passed in winery to the class' vector AND updating the text
+//file holding all the wineries.
+void Wineries::addWinery(wineryInfo newWinery)
+{
+	//pushing and updating the winery total
+	listOfWineries.push_back(newWinery);
+	totalWineries++;
+
+	//creating and opening the wineries text so it can have data appended to
+	//the end of the file
+	ofstream updateFile;
+	updateFile.open("wineries.txt", ios_base::app);
+
+	updateFile << endl << endl;
+	updateFile << newWinery.name << endl
+			   << newWinery.ownNumber << endl
+			   << totalWineries << endl;
+
+	//adding the distance information
+	for(int i = 1; i <= totalWineries; i++)
+	{
+		updateFile << i << " "
+				   << newWinery.otherWineryDistInfo.at(i) << endl;
+	}
+
+	updateFile << newWinery.numWinesOffered << endl;
+	map<string, bottleInfo>::iterator it;
+
+	//adding wine informaiton
+	for(it = newWinery.offeredWineInfo.begin();
+							it != newWinery.offeredWineInfo.end(); it++)
+	{
+		updateFile << it->first << endl
+				   << it->second.vintage << endl
+				   << it->second.price << endl;
+	}
+
+	updateFile.close();
+
+}//end - addWinery
 
 ////ACCESSORS/////////////////////////////////////////////////////////////////
 //returns the distance between the first winery and the second winery
@@ -165,7 +204,7 @@ string Wineries::print( int wineryNumber ) const
 					  << "DIST FROM CV.............." << distFromCV
 					  << "\n" << "WINES OFFERED............."
 					  << listOfWineries[wineryNumber - 1].numWinesOffered
-					  << "\n";
+					  << endl << endl;
 		}
 		else
 		{
@@ -180,14 +219,29 @@ string Wineries::print( int wineryNumber ) const
 	return returnStr.str();
 }//end - print
 
+//calling print for every winery in the classes list of total wineries.
+//the following method will return a string of nicely formatted winery info
+string Wineries::printAll() const
+{
+	string returnStr;
+	//running through and calling print for every winery in the vector
+	//NOTE: STARTING FROM 1 GOING TO MAX WINERIES
+	for(int i = 1; i <= totalWineries; i++)
+	{
+		returnStr += print(i);
+	}
+
+	return returnStr;
+}//end - printAll
+
 //return true is there are no wineries in the list
 bool Wineries::isEmpty( ) const
 {
 	return totalWineries == 0;
 }//end - isEmpty
 
-void Wineries::findRoute(int startingWinery,
-							   int numWineries, queue<int>& wineryRoute)
+void Wineries::findRoute(int startingWinery, int numWineries,
+						 queue<int>& wineryRoute)
 {
 	int exclude[numWineries];
 
@@ -220,7 +274,6 @@ void Wineries::findRoute(int startingWinery,
 			}//end - if
 		}//end - for
 
-
 		wineryRoute.push(val);
 		exclude[runsMade] = val;
 		currWinery = val;
@@ -232,7 +285,8 @@ void Wineries::findRoute(int startingWinery,
 		runsLeft--;
 		runsMade++;
 	}//end - while
-}
+}//end - findRoute
+
 
 
 

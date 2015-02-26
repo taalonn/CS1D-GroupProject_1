@@ -13,41 +13,43 @@ int main()
 
 	Wineries winery1;
 
-	cout << "distance between " << winery1.nameOf(7) << " and "
-		 << winery1.nameOf(4) << "... " << endl;
+	cout << "Testing printAll method\n\n";
+	cout << winery1.printAll();
 
-	cout << "which is winery 7 and 4: " << winery1.distBetween(7, 4)
-		 << " miles" << endl;
+	cin.get();
 
-	cout << "INFORMATION TEST...Winery No.5\n\n";
-	cout << winery1.print(5);
+	wineryInfo newWinery;
+	newWinery.name = "Cass Winery";
+	newWinery.ownNumber = 11;
+	newWinery.ownNumber = winery1.totWineries();
 
-	//causing error
-//	cout << winery1.listOfWineries[1].otherWineryDistInfo[3];
+	newWinery.otherWineryDistInfo[1] = 11.5;
+	newWinery.otherWineryDistInfo[2] = 14.2;
+	newWinery.otherWineryDistInfo[3] = 13.4;
+	newWinery.otherWineryDistInfo[4] = 16.5;
+	newWinery.otherWineryDistInfo[5] = 3.3;
+	newWinery.otherWineryDistInfo[6] = 12.2;
+	newWinery.otherWineryDistInfo[7] = 7.8;
+	newWinery.otherWineryDistInfo[8] = 6.9;
+	newWinery.otherWineryDistInfo[9] = 8.2;
+	newWinery.otherWineryDistInfo[10] = 6.11;
+	newWinery.otherWineryDistInfo[11] = 10.1;
 
-//	shoppingCart cart1;
-//
-//	cart1.updateOutput("wine1", 10.00, 3);
-//	cout << "Testing wine output\n\n";
-//	cout << getOutput();
+	newWinery.numWinesOffered = 8;
+	newWinery.offeredWineInfo["Viognier"].vintage = 2013;
+	newWinery.offeredWineInfo["Viognier"].price = 12.50;
 
-	queue<int> myRoute;
-
-	winery1.findRoute(1, 3, myRoute);
-
-	cout << myRoute.front();
-	myRoute.pop();
-
-	cout << myRoute.front();
-		myRoute.pop();
-
-		cout << myRoute.front();
-			myRoute.pop();
-
-			cout << myRoute.front();
-				myRoute.pop();
+	newWinery.offeredWineInfo["Roussanne"].vintage = 2013 ;
+	newWinery.offeredWineInfo["Roussanne"].price = 22.50;
 
 
+
+	cin.get();
+
+	winery1.addWinery(newWinery);
+
+	cout << "Testing printAll method\n\n";
+	cout << winery1.printAll();
 
 
 	return 0;
