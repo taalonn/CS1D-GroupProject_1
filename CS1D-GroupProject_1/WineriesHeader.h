@@ -26,8 +26,6 @@ struct wineryInfo
 	string name;
 	//THIS wineries number
 	int	   ownNumber;
-	//Total number of wineries in this list
-	int    numOfWineries;
 	//winery number is key that corresponds to a distance to other wineries
 	map<int, float> otherWineryDistInfo;
 	//holding the number of wines that are offered at each winery
@@ -46,9 +44,17 @@ class Wineries {
 
 //MUTATORS////////////////////////////////////////////////////////////////////
 
-		//this will add one new winery to the current list of wineries
-		//stored in the class AND it will update the wineries text file
-		void addWinery(wineryInfo newWinery);
+		//this method NEEDS to be passed a struct of wineryInfo containing
+		//distance points totaling the totalWineryies number + 1, wine num
+		//equaling the number of wines passed in and valid bottle info.
+		//This method DOES NOT NEED its own winery number as the program will
+		//generate that so the admin does not need to know the number before
+		//adding a new winery
+		bool addWinery(ifstream& newWineryText);
+
+		//This method will update the text file that stores the data
+		//making the data persistent between executions
+		void updateList();
 
 //ACCESSORS///////////////////////////////////////////////////////////////////
 		//returns distance between two wineries RETURNS -1.0 IF ERROR
