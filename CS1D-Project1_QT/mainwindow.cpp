@@ -39,7 +39,6 @@ void MainWindow::on_AdminLoginButton_clicked()
             AdminWindow adwin;
             adwin.setModal(true);
             adwin.exec();
-            this->close();
         }
         else
         {
