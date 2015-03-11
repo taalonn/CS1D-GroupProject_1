@@ -1,12 +1,1 @@
-Winery Name
-wineryNum_1 distFrom_1
-...
-wineryNum_N distFrom_N
-numOfWines
-wineName_1
-wineYear_1
-wineVintage_1
-...
-wineName_N
-wineYear_N
-wineVintage_N
+New Winery Test 1

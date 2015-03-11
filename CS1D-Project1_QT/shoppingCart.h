@@ -16,7 +16,7 @@ private:
 
 public:
     shoppingCart();
-   ~shoppingCart();
+    ~shoppngCart();
     void Add(float purchase);
     void UpdateOutput(string wine, float purchase, int amount);
     string GetOutput();
@@ -29,7 +29,7 @@ shoppingCart::shoppingCart()
              "--- ---------- ------\n";
 }
 
-shoppingCart::~shoppingCart()
+shoppingCart::~shoppngCart()
 {}
 
 void shoppingCart::Add(float purchase)
@@ -39,24 +39,20 @@ void shoppingCart::Add(float purchase)
 
 void shoppingCart::UpdateOutput(string wine, float purchase, int amount)
 {
-    ostringstream update;
-    update << out;
-    update << left << setprecision(2) << fixed << setw(3) << amount
-    	   << "  "
-    	   << setw(9) << wine
-           << "  " << setw(6) << purchase*amount << endl;
+    ostringstream update = out;
+
+    update << left << setw(3) << amount << "\s\s" << setw(9) << wine
+           << "\s\s" << setw(6) << purchase*amount << endl;
     Add(purchase*amount);
-    out = update.str();
+    out = update;
 }
 
 string shoppingCart::GetOutput()
 {
-     ostringstream update;
-     update << out;
-     update << setprecision(2) << fixed;
+     ostringstream update = out;
      update << "---------------------\n"
             << "Total: $ " << total;
-     out = update.str();
+     out = update;
      return out;
 }
 #endif	/* SHOPPINGCART_H */

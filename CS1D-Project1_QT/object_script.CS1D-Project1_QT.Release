@@ -1,0 +1,13 @@
+INPUT(
+./release/main.o
+./release/mainwindow.o
+./release/WineriesClass.o
+./release/AdminAccess.o
+./release/wineryviewer.o
+./release/adminwindow.o
+./release/qrc_Resource1.o
+./release/qrc_Res2.o
+./release/moc_mainwindow.o
+./release/moc_wineryviewer.o
+./release/moc_adminwindow.o
+);

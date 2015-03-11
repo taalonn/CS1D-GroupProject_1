@@ -2,4 +2,8 @@
     <qresource prefix="/1">
         <file>vineyard pic 1.jpg</file>
     </qresource>
+    <qresource prefix="/textfiles">
+        <file>wineries.txt</file>
+        <file>WineriesInfo.txt</file>
+    </qresource>
 </RCC>
