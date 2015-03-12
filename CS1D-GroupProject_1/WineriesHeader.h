@@ -77,8 +77,15 @@ class Wineries {
 		//return true if there are no wineries in the list
 		bool isEmpty( ) const;
 
-		void findRoute(int startingWinery,
-					   int numWineries, queue<int>& myQueue);
+		//generating a shortest-path tour based on the starting winery and
+		//the number of wineries the user wishes to visit
+		void findRoute(int startingWinery, int numWineries);
+
+		//generates a route to all the wineries starting from the winery that
+		//is closest to the CanyonVilla destination
+		void visitAll( );
+
+		queue<int> tour;
 
 private:
 			vector<wineryInfo> listOfWineries;
