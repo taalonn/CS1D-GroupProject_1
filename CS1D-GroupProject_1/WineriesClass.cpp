@@ -179,6 +179,15 @@ void Wineries::addWine(int wineryNum, string wineName,
 
 }//end - addWine
 
+
+//the following method will change the price for the selected bottle on wine
+void Wineries::changeWinePrice(int wineryNum, string wineName, float newPrice)
+{
+	//creating a new wine in the list for this winery
+	listOfWineries[wineryNum - 1].offeredWineInfo[wineName].price = newPrice;
+}
+
+
 ////ACCESSORS/////////////////////////////////////////////////////////////////
 //returns the distance between the first winery and the second winery
 float Wineries::distBetween(int winery1, int winery2) const

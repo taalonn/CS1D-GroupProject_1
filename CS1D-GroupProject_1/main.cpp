@@ -35,6 +35,8 @@ int main()
 	winery1.addWine(11, "WINE_TEST_4", 1001, 3.43);
 
 
+	winery1.changeWinePrice(11, "WINE_TEST_3", 500.22);
+
 	cout << "\n\n___________\n";
 	winery1.updateList();
 	cout << "```````````````````````````````";

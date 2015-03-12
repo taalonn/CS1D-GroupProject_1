@@ -52,6 +52,9 @@ class Wineries {
 		void addWine(int wineryNum, string wineName,
 				     int wineVintage, float winePrice);
 
+		//will change the price for the selected bottle on wine
+		void changeWinePrice(int wineryNum, string wineName, float newPrice);
+
 		//This method will update the text file that stores the data
 		//making the data persistent between executions
 		void updateList();
