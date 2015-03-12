@@ -44,13 +44,13 @@ class Wineries {
 
 //MUTATORS////////////////////////////////////////////////////////////////////
 
-		//this method NEEDS to be passed a struct of wineryInfo containing
-		//distance points totaling the totalWineryies number + 1, wine num
-		//equaling the number of wines passed in and valid bottle info.
-		//This method DOES NOT NEED its own winery number as the program will
-		//generate that so the admin does not need to know the number before
-		//adding a new winery
-		bool addWinery(ifstream& newWineryText);
+		//adding a new winery to the list as well as updating all the other
+		//wineries based off the passed in wineries information
+		void addWinery(wineryInfo newWinery);
+
+		//will add a new bottle of wine to the winery specified
+		void addWine(int wineryNum, string wineName,
+				     int wineVintage, float winePrice);
 
 		//This method will update the text file that stores the data
 		//making the data persistent between executions
@@ -69,7 +69,7 @@ class Wineries {
 
 		//returns the contents of every winery currently in the list
 		//(formatted as a string).
-		string printAll() const;//NOT YET IMPLEMENTED
+		string printAll( ) const;//NOT YET IMPLEMENTED
 
 		//returns the total number of wineries
 		int totWineries( ) const;

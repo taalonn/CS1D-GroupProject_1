@@ -10,41 +10,29 @@ int main()
 
 	wineryInfo newWinery;
 
-	newWinery.name = "Tablas Creek Vineyard";
-	newWinery.otherWineryDistInfo[1] = 3.5;
-	newWinery.otherWineryDistInfo[2] = 11.0;
-	newWinery.otherWineryDistInfo[3] = 17.2;
-	newWinery.otherWineryDistInfo[4] = 13.2;
-	newWinery.otherWineryDistInfo[5] = 12.1;
-	newWinery.otherWineryDistInfo[6] = 14.2;
-	newWinery.otherWineryDistInfo[7] = 4.0;
-	newWinery.otherWineryDistInfo[8] = 4.7;
+	newWinery.name = "TestingAddNewWinery";
+	newWinery.otherWineryDistInfo[1] = 1.5;
+	newWinery.otherWineryDistInfo[2] = 2.0;
+	newWinery.otherWineryDistInfo[3] = 3.2;
+	newWinery.otherWineryDistInfo[4] = 4.2;
+	newWinery.otherWineryDistInfo[5] = 5.1;
+	newWinery.otherWineryDistInfo[6] = 6.2;
+	newWinery.otherWineryDistInfo[7] = 7.0;
+	newWinery.otherWineryDistInfo[8] = 8.7;
 	newWinery.otherWineryDistInfo[9] = 9.5;
-	newWinery.otherWineryDistInfo[10] = 14.54;
+	newWinery.otherWineryDistInfo[10] = 10.54;
+	newWinery.otherWineryDistInfo[11] = 11.54;
 
 
-	newWinery.numWinesOffered = 3;
+	newWinery.numWinesOffered = 0;
+
+	winery1.addWinery(newWinery);
 
 
-	bottleInfo newBottle1;
-	newBottle1.vintage = 2002;
-	newBottle1.price = 14.50;
-	newWinery.offeredWineInfo["Roussane"] = newBottle1;
-
-	bottleInfo newBottle2;
-	newBottle1.vintage = 2002;
-	newBottle1.price = 15.00;
-	newWinery.offeredWineInfo["Cote de Blanc"] = newBottle2;
-
-	bottleInfo newBottle3;
-	newBottle1.vintage = 2001;
-	newBottle1.price = 18.00;
-	newWinery.offeredWineInfo["Cote de Rouge"] = newBottle3;
-
-
-	cout << winery1.addWinery(newWinery);
-
-
+	winery1.addWine(1, "WINE_TEST_1", 1900, 120.43);
+	winery1.addWine(11, "WINE_TEST_2", 2002, 1.43);
+	winery1.addWine(11, "WINE_TEST_3", 3003, 20.43);
+	winery1.addWine(11, "WINE_TEST_4", 1001, 3.43);
 
 
 	cout << "\n\n___________\n";

@@ -90,42 +90,19 @@ Wineries::~Wineries(){}
 
 ////MUTATORS//////////////////////////////////////////////////////////////////
 
-//pushing the passed in winery to the class vector. This method will also
-//check to see if the data passed in is valid depending on the number
-//of other wineries, num of wines at the winery, etc.
-//Will return false if data is not good.
-//This method will also assign a winery number to the passed in winery,
-//so the admin will not need to know the total number of wineries when
-//creating a new one.
-bool Wineries::addWinery(ifstream& newWineryText)
+//pushing the passed in winery to the class' vector AND updating the text
+//file holding all the wineries.
+void Wineries::addWinery(wineryInfo newWinery)
 {
-	//getting all the informaiton from the passed in text file and creating
-	//a new winery from it
-	wineryInfo newWinery;
+	//pushing and updating the winery total
+	listOfWineries.push_back(newWinery);
+	totalWineries++;
 
-	getline(newWineryText, newWinery.name);
-
-
-
-	//if the data is good, will push onto the new winery onto the vector
-	// and will increment the number of total wineries
-	if(newWinery.otherWineryDistInfo.size() == totalWineries + 1 &&
-	   newWinery.offeredWineInfo.size() == newWinery.numWinesOffered)
+	//adding in the new distances to all the other wineries already in the list
+	for(int i = 0; i < totalWineries - 1; i++)
 	{
-		newWinery.ownNumber = totalWineries + 1;
-		listOfWineries.push_back(newWinery);
-		totalWineries++;
-
-		//before adding the new winery to the list the program will update
-		//the data for every other winery using the new distances passed in
-
-
-
-		return true;
-	}
-	else
-	{
-		return false;
+		listOfWineries[i].otherWineryDistInfo[totalWineries] =
+				listOfWineries[totalWineries - 1].otherWineryDistInfo[i + 1];
 	}
 
 }//end - addWinery
@@ -184,6 +161,23 @@ void Wineries::updateList()
 	cout << updateStr.str();
 
 }//end - updateList
+
+//the following method will add one bottle of wine to the winery passed in
+void Wineries::addWine(int wineryNum, string wineName,
+					   int wineVintage, float winePrice)
+{
+	//creating a new bottle from the passed in information
+	bottleInfo newBottle;
+	newBottle.price = winePrice;
+	newBottle.vintage = wineVintage;
+
+	//creating a new wine in the list for this winery
+	listOfWineries[wineryNum - 1].offeredWineInfo[wineName] = newBottle;
+
+	//incrememting the total number of wines offered at the selected winery
+	listOfWineries[wineryNum - 1].numWinesOffered += 1;
+
+}//end - addWine
 
 ////ACCESSORS/////////////////////////////////////////////////////////////////
 //returns the distance between the first winery and the second winery
