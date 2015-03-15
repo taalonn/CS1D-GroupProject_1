@@ -19,7 +19,7 @@ Wineries::Wineries()
 	inFile.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	//Will create a vector of account names and passwords
-	while(inFile)
+	for(int infile = 0; infile < totalWineries; infile++)
 	{
 		//creating a new Winery to hold all the information about to be
 		//taken in from the input file
@@ -80,6 +80,8 @@ Wineries::Wineries()
 
 		currentWineryNumber++;
 	}//END - while(inFile)
+
+	inFile.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	//closing the input file
 	inFile.close();
@@ -157,8 +159,19 @@ void Wineries::updateList()
 
 	}//end - for i
 
-	//eventually will be replaced by outputting to a file
-	cout << updateStr.str();
+//	//for debug testing
+//	cout << updateStr.str();
+
+	//opening, overwriting and closing the winery list file
+	ofstream newFile;
+
+	remove("wineries.txt");
+
+	newFile.open("wineries.txt");
+
+	newFile << updateStr.str();
+
+	newFile.close();
 
 }//end - updateList
 
@@ -372,3 +385,66 @@ void Wineries::visitAll()
 
 	findRoute(closestWinerytoCanyonVilla , totalWineries-1);
 }//end - visitAll
+
+//finding the route based on the users list of wineries
+void Wineries::findSpecificRoute( vector<int> alloptions)
+{
+	vector<int>::iterator eraser;
+	int numWineries = alloptions.size() -1;
+	int currWinery;
+	int index;
+
+	float test;
+	int next;
+	int closestWinerytoCanyonVilla;
+	float shortest = 100;
+
+		for(eraser = alloptions.begin(); eraser < alloptions.end(); eraser++)
+		{
+			index = *eraser -1;
+			if(listOfWineries[index].otherWineryDistInfo[index+1] < shortest)
+			{
+				closestWinerytoCanyonVilla = index+1;
+				shortest = listOfWineries[index].otherWineryDistInfo[index+1];
+			}
+		}
+
+		currWinery = closestWinerytoCanyonVilla;
+
+	while(!tour.empty())
+	{
+		tour.pop();
+	}
+
+	while(numWineries >= 0)
+	{
+		eraser = alloptions.begin();
+		while(*eraser != currWinery)
+		{
+			eraser++;
+		}
+
+		tour.push(currWinery);
+		alloptions.erase(eraser);
+
+		next = alloptions.front();
+		shortest = listOfWineries[currWinery-1].otherWineryDistInfo[next];
+
+
+		index = 0;
+		while(index < alloptions.size())
+		{
+			test = listOfWineries[currWinery-1].otherWineryDistInfo[alloptions[index]];
+			if(test < shortest)
+			{
+				next = alloptions[index];
+				shortest = test;
+			}
+			index++;
+		}
+		currWinery = next;
+		numWineries--;
+	}
+
+}//end - findSpecificRoute
+

@@ -1,6 +1,6 @@
 10
 Adelaida Cellars
-1 8.0
+1 8
 2 13.2
 3 15.4
 4 11.5
@@ -13,13 +13,13 @@ Adelaida Cellars
 3
 Cabernet Sauvignon
 2000
-22.50
-Zinfandel
-2002
-14.00
+22.5
 Old Vines Zinfandel
 2001
-19.50
+19.5
+Zinfandel
+2002
+14
 
 Castoro Cellars
 1 13.2
@@ -31,20 +31,20 @@ Castoro Cellars
 7 10.3
 8 9.3
 9 5.2
-10 11.0
+10 11
 4
-Sauvignon Blanc
-2002
-12.50
 Estate Chardonnay
 2001
-18.00
-Zinfandel
-2002
-16.00
+18
 Late Harvest Zinfandel
 2001
-22.50
+22.5
+Sauvignon Blanc
+2002
+12.5
+Zinfandel
+2002
+16
 
 Chumeia
 1 15.4
@@ -58,12 +58,12 @@ Chumeia
 9 17.2
 10 17.2
 2
-Voignier
-2002
-9.50
 Pinot Noir
 2001
-16.00
+16
+Voignier
+2002
+9.5
 
 Eberle Winery
 1 11.5
@@ -77,15 +77,15 @@ Eberle Winery
 9 13.2
 10 13.2
 3
-Estate Cabernet Sauvignon
-2000
-25.00
-Zinfandel
-2001
-18.00
 Chardonnay
 2002
-20.00
+20
+Estate Cabernet Sauvignon
+2000
+25
+Zinfandel
+2001
+18
 
 Jan Kris Winery
 1 13.3
@@ -101,10 +101,10 @@ Jan Kris Winery
 2
 Zinfandel
 2002
-14.50
+14.5
 Zinfandel Port
 2002
-16.00
+16
 
 L'Aventure
 1 15.2
@@ -120,7 +120,7 @@ L'Aventure
 1
 Optimus
 2001
-28.00
+28
 
 Norman Vineyards
 1 5.8
@@ -132,20 +132,20 @@ Norman Vineyards
 7 8.44
 8 0.7
 9 5.8
-10 4.0
+10 4
 4
 Barbera
 2002
-16.00
+16
 Meritage (No Nonsense Red)
 2001
-14.50
+14.5
 Zinfandel "The Classic"
 2002
-16.00
+16
 Zinfandel "The Monster"
 2002
-16.50
+16.5
 
 Opolo Vineyards
 1 6.9
@@ -159,15 +159,15 @@ Opolo Vineyards
 9 5.7
 10 4.7
 3
-Syrah
-2001
-18.00
 Pinot Noir
 2001
-22.00
+22
+Syrah
+2001
+18
 Zinfandel
 2002
-18.00
+18
 
 Pipestone Vineyards
 1 11.2
@@ -181,34 +181,34 @@ Pipestone Vineyards
 9 9.19
 10 9.5
 3
-Viognier
+Shiraz
 2002
-12.50
+16.5
 Syrah
 2001
-15.00
-Syrah
+15
+Viognier
 2002
-16.50
+12.5
 
 Tablas Creek Vineyard
 1 3.5
-2 11.0
+2 11
 3 17.2
 4 13.2
 5 12.1
 6 14.2
-7 4.0
+7 4
 8 4.7
 9 9.5
 10 14.54
 3
-Roussane
-2002
-14.50
 Cote de Blanc
 2002
-15.00
+15
 Cote de Rouge
 2001
-18.00
+18
+Roussane
+2002
+14.5

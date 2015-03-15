@@ -88,6 +88,9 @@ class Wineries {
 		//is closest to the CanyonVilla destination
 		void visitAll( );
 
+		//finding the route based on the users list of wineries
+		void findSpecificRoute( vector<int> alloptions );
+
 		queue<int> tour;
 
 private:
