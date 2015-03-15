@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/1">
         <file>vineyard pic 1.jpg</file>
+        <file>Winery.png</file>
+        <file>jerry.jpg</file>
     </qresource>
     <qresource prefix="/textfiles">
         <file>wineries.txt</file>
