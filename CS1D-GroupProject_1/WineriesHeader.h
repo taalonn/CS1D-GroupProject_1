@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <map>
 #include <limits>
@@ -59,6 +60,14 @@ class Wineries {
 		//making the data persistent between executions
 		void updateList();
 
+		//methods for the shopping cart
+	    //will take a wine, purchase price and an amount and add it to an output
+	    void updateOutput(string wine, float purchase, int amount);
+	    //a header that will preface the wine with where it was purchased at
+	    void winePurchacedAt(int wineryNumber);
+	    //returns a string formatted with all the wine purchase information
+	    string getOutput();
+
 //ACCESSORS///////////////////////////////////////////////////////////////////
 		//returns distance between two wineries RETURNS -1.0 IF ERROR
 		float distBetween(int winery1, int winery2) const;
@@ -97,5 +106,8 @@ private:
 			vector<wineryInfo> listOfWineries;
 			vector<wineryInfo>::iterator it;
 			int totalWineries;
+			//data members for the shopping cart
+		    float  total;
+		    string out;
 };
 #endif /* Wineries_H_ */
