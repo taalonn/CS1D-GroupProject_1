@@ -9,7 +9,6 @@
 #include <cstdlib>
 #include <Windows.h>
 #include "wineriesHeader.h"
-#include "ShoppingCart.h"
 using namespace std;
 
 struct Person

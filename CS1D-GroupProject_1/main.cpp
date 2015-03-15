@@ -46,10 +46,30 @@ int main()
 	winery1.addWinery(newWinery);
 
 //	winery1.addWinery(newWinery1);
+//
+//	cout << "\n\n___________\n";
+//	winery1.updateList();
+//	cout << "```````````````````````````````";
 
-	cout << "\n\n___________\n";
-	winery1.updateList();
-	cout << "```````````````````````````````";
+
+
+	winery1.winePurchacedAt(2);
+	winery1.updateOutput("Cote de Blanc", 34.54, 2);
+
+
+
+	winery1.winePurchacedAt(5);
+	winery1.updateOutput("Roussane", 66.54, 2);
+	winery1.updateOutput("winer3", 66.54, 1);
+
+	cout << winery1.getOutput();
+
+
+
+
+
+
+
 
 	return 0;
 }
