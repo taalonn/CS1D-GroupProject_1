@@ -9,6 +9,11 @@
 //Class
 Wineries::Wineries()
 {
+	//setting the data members for the shopping cart items
+    total  = 0;
+    out    = " #   Purchase   Cost \n"
+             "--- ---------- ------";
+
 	int currentWineryNumber = 1;
 	ifstream inFile;
 	inFile.open("wineries.txt");
@@ -91,6 +96,46 @@ Wineries::Wineries()
 Wineries::~Wineries(){}
 
 ////MUTATORS//////////////////////////////////////////////////////////////////
+
+//the creation of a new Wineries class will fill the header for the shopping
+//cart data "out". NOTE: YOU MUST TELL THE CART WHICH WINERY YOU GOT THE WINE
+//FROM FIRST BEFORE USING THIS UPDATE OUTPUT METHOD.
+void Wineries::updateOutput(string wine, float purchase, int amount)
+{
+    ostringstream update;
+    update << out;
+    update << left << setprecision(2) << fixed << setw(3) << amount
+    	   << "  "
+    	   << setw(9) << wine
+           << "  " << setw(6) << purchase*amount << endl;
+    out = update.str();
+
+    total += purchase * amount;
+}//end - update output
+
+//this will tell the reciept where the wine was purchased at at a header to
+//the wine that was purchased.
+void Wineries::winePurchacedAt(int wineryNumber)
+{
+    ostringstream update;
+    update << out;
+    update << endl << "Purchased at: " << nameOf(wineryNumber) << endl;
+    out = update.str();
+}//end - winePurchasedAt
+
+//return a formatted string for output. NOTE: YOU CANNOT USE THIS METHOD MORE
+//THAN ONCE FOR OUTPUT AS IT WILL PUT AN ENDING CAP ON THE STRING OF TEXT AND
+//PLACE A TOTAL PRICE AT THE BOTTOM.
+string Wineries::getOutput()
+{
+     ostringstream update;
+     update << out;
+     update << setprecision(2) << fixed;
+     update << "---------------------\n"
+            << "Total: $ " << total;
+     out = update.str() + "\n";
+     return out;
+}//end - getOutput
 
 //pushing the passed in winery to the class' vector AND updating the text
 //file holding all the wineries.
