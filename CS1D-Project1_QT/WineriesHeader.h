@@ -26,8 +26,6 @@ struct wineryInfo
     string name;
     //THIS wineries number
     int	   ownNumber;
-    //Total number of wineries in this list
-    int    numOfWineries;
     //winery number is key that corresponds to a distance to other wineries
     map<int, float> otherWineryDistInfo;
     //holding the number of wines that are offered at each winery
@@ -50,10 +48,18 @@ class Wineries {
         //stored in the class AND it will update the wineries text file
         void addWinery(wineryInfo newWinery);
 
-//ACCESSORS///////////////////////////////////////////////////////////////////
-        //returns distance between two wineries RETURNS -1.0 IF ERROR
-        float distBetween(int winery1, int winery2) const;
+        //will add a new bottle of wine to the winery specified
+        void addWine(int wineryNum, string wineName,
+                     int wineVintage, float winePrice);
 
+        //will change the price for the selected bottle on wine
+        void changeWinePrice(int wineryNum, string wineName, float newPrice);
+
+        //This method will update the text file that stores the data
+        //making the data persistent between executions
+        void updateList();
+
+//ACCESSORS///////////////////////////////////////////////////////////////////
         //returns the name of the passed in winery number
         string nameOf(int wineryNumber) const;
 
@@ -71,8 +77,18 @@ class Wineries {
         //return true if there are no wineries in the list
         bool isEmpty( ) const;
 
-        void findRoute(int startingWinery,
-                       int numWineries, queue<int>& myQueue);
+        //generating a shortest-path tour based on the starting winery and
+        //the number of wineries the user wishes to visit
+        void findRoute(int startingWinery, int numWineries);
+
+        //generates a route to all the wineries starting from the winery that
+        //is closest to the CanyonVilla destination
+        void visitAll( );
+
+        //finding the route based on the users list of wineries
+        void findSpecificRoute( vector<int> alloptions );
+
+        queue<int> tour;
 
 private:
             vector<wineryInfo> listOfWineries;

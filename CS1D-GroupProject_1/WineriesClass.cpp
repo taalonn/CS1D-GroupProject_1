@@ -18,7 +18,6 @@ Wineries::Wineries()
 	inFile >> totalWineries;
 	inFile.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	//Will create a vector of account names and passwords
 	for(int infile = 0; infile < totalWineries; infile++)
 	{
 		//creating a new Winery to hold all the information about to be

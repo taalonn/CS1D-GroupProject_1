@@ -16,16 +16,19 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     WineriesClass.cpp \
     AdminAccess.cpp \
-    adminwindow.cpp
+    adminwindow.cpp \
+    contact.cpp
 
 HEADERS  += mainwindow.h \
     shoppingCart.h \
     header.h \
     WineriesHeader.h \
-    adminwindow.h
+    adminwindow.h \
+    contact.h
 
 FORMS    += mainwindow.ui \
-    adminwindow.ui
+    adminwindow.ui \
+    contact.ui
 
 RESOURCES += \
     Resource1.qrc \

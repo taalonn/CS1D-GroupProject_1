@@ -131,103 +131,23 @@
      <widget class="QTextBrowser" name="Current">
       <property name="geometry">
        <rect>
-        <x>270</x>
-        <y>60</y>
-        <width>271</width>
-        <height>161</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QTextBrowser" name="Wines">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
+        <x>500</x>
         <y>60</y>
         <width>261</width>
         <height>161</height>
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>35</y>
-        <width>101</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="palette">
-       <palette>
-        <active>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </active>
-        <inactive>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </inactive>
-        <disabled>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>120</red>
-            <green>120</green>
-            <blue>120</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </disabled>
-       </palette>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>9</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="autoFillBackground">
+     <widget class="QToolBox" name="toolBox">
+      <property name="enabled">
        <bool>true</bool>
       </property>
-      <property name="text">
-       <string> Wines Available</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>400</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Buy Wine</string>
-      </property>
-     </widget>
-     <widget class="QToolBox" name="toolBox">
       <property name="geometry">
        <rect>
         <x>10</x>
         <y>30</y>
         <width>221</width>
-        <height>251</height>
+        <height>221</height>
        </rect>
       </property>
       <property name="palette">
@@ -379,7 +299,7 @@
        <number>1</number>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="tabSpacing">
        <number>6</number>
@@ -390,70 +310,17 @@
          <x>0</x>
          <y>0</y>
          <width>221</width>
-         <height>170</height>
+         <height>140</height>
         </rect>
        </property>
        <attribute name="label">
         <string>Choose Your Tour</string>
        </attribute>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>0</y>
-          <width>151</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="palette">
-         <palette>
-          <active>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>0</red>
-              <green>0</green>
-              <blue>0</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>0</red>
-              <green>0</green>
-              <blue>0</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>120</red>
-              <green>120</green>
-              <blue>120</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="autoFillBackground">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string>Where would you like to start?</string>
-        </property>
-       </widget>
        <widget class="QTextEdit" name="CustomList">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>80</y>
+          <y>30</y>
           <width>181</width>
           <height>51</height>
          </rect>
@@ -462,9 +329,9 @@
        <widget class="QLabel" name="label_6">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>50</y>
-          <width>211</width>
+          <x>20</x>
+          <y>0</y>
+          <width>181</width>
           <height>21</height>
          </rect>
         </property>
@@ -509,14 +376,14 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>What other Wineries would you like to visit?</string>
+         <string>What wineries would you like to visit?</string>
         </property>
        </widget>
        <widget class="QPushButton" name="CustomTour">
         <property name="geometry">
          <rect>
           <x>50</x>
-          <y>140</y>
+          <y>90</y>
           <width>121</width>
           <height>23</height>
          </rect>
@@ -541,40 +408,20 @@
          <pixmap resource="Res2.qrc">:/1/Winery.png</pixmap>
         </property>
        </widget>
-       <widget class="QWidget" name="">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>20</y>
-          <width>187</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="label_5">
-           <property name="autoFillBackground">
-            <bool>true</bool>
-           </property>
-           <property name="text">
-            <string>Winery Number: </string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="CustomStart"/>
-         </item>
-        </layout>
-       </widget>
        <zorder>label_15</zorder>
-       <zorder>label_4</zorder>
-       <zorder>label_5</zorder>
-       <zorder>CustomStart</zorder>
        <zorder>CustomList</zorder>
        <zorder>label_6</zorder>
        <zorder>CustomTour</zorder>
       </widget>
       <widget class="QWidget" name="QuickPage">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>221</width>
+         <height>140</height>
+        </rect>
+       </property>
        <attribute name="label">
         <string>Quick Tour</string>
        </attribute>
@@ -616,7 +463,7 @@
           <x>10</x>
           <y>20</y>
           <width>201</width>
-          <height>21</height>
+          <height>22</height>
          </rect>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -631,11 +478,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_3"/>
+          <widget class="QLineEdit" name="startwinery"/>
          </item>
         </layout>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_4">
+       <widget class="QLineEdit" name="numtovisit">
         <property name="geometry">
          <rect>
           <x>80</x>
@@ -645,7 +492,7 @@
          </rect>
         </property>
        </widget>
-       <widget class="QPushButton" name="CustomTour_3">
+       <widget class="QPushButton" name="QuickTour">
         <property name="geometry">
          <rect>
           <x>50</x>
@@ -678,8 +525,8 @@
        <zorder>label_8</zorder>
        <zorder>label_9</zorder>
        <zorder>layoutWidget</zorder>
-       <zorder>lineEdit_4</zorder>
-       <zorder>CustomTour_3</zorder>
+       <zorder>numtovisit</zorder>
+       <zorder>QuickTour</zorder>
       </widget>
       <widget class="QWidget" name="FullPage">
        <property name="geometry">
@@ -687,7 +534,7 @@
          <x>0</x>
          <y>0</y>
          <width>221</width>
-         <height>170</height>
+         <height>140</height>
         </rect>
        </property>
        <attribute name="label">
@@ -729,7 +576,7 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>340</x>
+        <x>560</x>
         <y>30</y>
         <width>131</width>
         <height>20</height>
@@ -787,60 +634,10 @@
        <string> Current Winery</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="NextUp">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>340</y>
-        <width>161</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="palette">
-       <palette>
-        <active>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </active>
-        <inactive>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </inactive>
-        <disabled>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>120</red>
-            <green>120</green>
-            <blue>120</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </disabled>
-       </palette>
-      </property>
-      <property name="text">
-       <string>Next Winery</string>
-      </property>
-     </widget>
      <widget class="QTextBrowser" name="Cart">
       <property name="geometry">
        <rect>
-        <x>560</x>
+        <x>500</x>
         <y>320</y>
         <width>261</width>
         <height>171</height>
@@ -850,10 +647,10 @@
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>670</x>
-        <y>290</y>
+        <x>610</x>
+        <y>280</y>
         <width>41</width>
-        <height>16</height>
+        <height>21</height>
        </rect>
       </property>
       <property name="palette">
@@ -895,7 +692,7 @@
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>11</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -905,83 +702,6 @@
       </property>
       <property name="text">
        <string> Cart</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="EndEarly">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>380</y>
-        <width>161</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="palette">
-       <palette>
-        <active>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>0</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </active>
-        <inactive>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>0</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>170</red>
-            <green>0</green>
-            <blue>0</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </inactive>
-        <disabled>
-         <colorrole role="WindowText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>120</red>
-            <green>120</green>
-            <blue>120</blue>
-           </color>
-          </brush>
-         </colorrole>
-         <colorrole role="ButtonText">
-          <brush brushstyle="SolidPattern">
-           <color alpha="255">
-            <red>120</red>
-            <green>120</green>
-            <blue>120</blue>
-           </color>
-          </brush>
-         </colorrole>
-        </disabled>
-       </palette>
-      </property>
-      <property name="text">
-       <string>End Tour</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_12">
@@ -1003,114 +723,255 @@
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>260</x>
         <y>360</y>
-        <width>195</width>
-        <height>22</height>
+        <width>212</width>
+        <height>55</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_2">
-         <property name="palette">
-          <palette>
-           <active>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>170</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>236</red>
-               <green>236</green>
-               <blue>236</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </active>
-           <inactive>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>170</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>236</red>
-               <green>236</green>
-               <blue>236</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </inactive>
-           <disabled>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>120</red>
-               <green>120</green>
-               <blue>120</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>240</red>
-               <green>240</green>
-               <blue>240</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </disabled>
-          </palette>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="autoFillBackground">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Wine Name: </string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>170</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>236</red>
+                 <green>236</green>
+                 <blue>236</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>170</red>
+                 <green>0</green>
+                 <blue>0</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>236</red>
+                 <green>236</green>
+                 <blue>236</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+              <colorrole role="Base">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>240</red>
+                 <green>240</green>
+                 <blue>240</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Wine Name: </string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="buyname"/>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>170</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>170</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="WindowText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>120</red>
+                   <green>120</green>
+                   <blue>120</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="autoFillBackground">
+              <bool>true</bool>
+             </property>
+             <property name="text">
+              <string>Quantity: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="buynum"/>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Buy">
+           <property name="text">
+            <string>Buy Wine</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </widget>
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>400</y>
-        <width>100</width>
-        <height>22</height>
+        <x>50</x>
+        <y>350</y>
+        <width>151</width>
+        <height>71</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <layout class="QVBoxLayout" name="verticalLayout_3">
        <item>
-        <widget class="QLabel" name="label_3">
+        <widget class="QPushButton" name="NextUp">
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>170</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>170</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>120</red>
+               <green>120</green>
+               <blue>120</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
+         <property name="text">
+          <string>Next Winery</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="EndEarly">
          <property name="palette">
           <palette>
            <active>
             <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
                <red>170</red>
@@ -1122,6 +983,15 @@
            </active>
            <inactive>
             <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
                <red>170</red>
@@ -1141,46 +1011,36 @@
               </color>
              </brush>
             </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>120</red>
+               <green>120</green>
+               <blue>120</blue>
+              </color>
+             </brush>
+            </colorrole>
            </disabled>
           </palette>
          </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="autoFillBackground">
-          <bool>true</bool>
-         </property>
          <property name="text">
-          <string>Quantity: </string>
+          <string>End Tour</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="QSpinBox" name="spinBox"/>
        </item>
       </layout>
      </widget>
      <zorder>label_12</zorder>
+     <zorder>layoutWidget</zorder>
      <zorder>Current</zorder>
-     <zorder>Wines</zorder>
-     <zorder>label</zorder>
-     <zorder>lineEdit</zorder>
-     <zorder>spinBox</zorder>
-     <zorder>label_2</zorder>
-     <zorder>label_3</zorder>
-     <zorder>pushButton</zorder>
+     <zorder>Buy</zorder>
      <zorder>toolBox</zorder>
      <zorder>label_7</zorder>
      <zorder>NextUp</zorder>
      <zorder>Cart</zorder>
      <zorder>label_11</zorder>
      <zorder>EndEarly</zorder>
-     <zorder>label_13</zorder>
      <zorder>layoutWidget</zorder>
-     <zorder>label_6</zorder>
     </widget>
     <widget class="QWidget" name="AdminTab">
      <attribute name="title">
@@ -1189,13 +1049,26 @@
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>150</y>
+        <x>170</x>
+        <y>120</y>
         <width>251</width>
         <height>221</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
@@ -1213,6 +1086,50 @@
          </item>
          <item>
           <widget class="QLabel" name="admintitle">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="text">
             <string>Admin Login</string>
            </property>
@@ -1237,13 +1154,64 @@
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <widget class="QLabel" name="adminname">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>username</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="username"/>
+          <widget class="QLineEdit" name="username">
+           <property name="maxLength">
+            <number>25</number>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -1251,6 +1219,53 @@
         <layout class="QHBoxLayout" name="horizontalLayout_2">
          <item>
           <widget class="QLabel" name="adminpass">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>255</red>
+                 <green>255</green>
+                 <blue>255</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>120</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="text">
             <string>password</string>
            </property>
@@ -1258,6 +1273,9 @@
          </item>
          <item>
           <widget class="QLineEdit" name="password">
+           <property name="maxLength">
+            <number>25</number>
+           </property>
            <property name="echoMode">
             <enum>QLineEdit::Password</enum>
            </property>
@@ -1304,6 +1322,24 @@
        </item>
       </layout>
      </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>-20</x>
+        <y>-10</y>
+        <width>881</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="Res2.qrc">:/1/jerry.jpg</pixmap>
+      </property>
+     </widget>
+     <zorder>label_4</zorder>
+     <zorder>verticalLayoutWidget</zorder>
     </widget>
    </widget>
   </widget>
@@ -1322,7 +1358,6 @@
     </property>
     <addaction name="actionCommon_Help_Topics"/>
     <addaction name="actionContact_Us"/>
-    <addaction name="actionAdmin_Login"/>
    </widget>
    <addaction name="menuHelp"/>
   </widget>

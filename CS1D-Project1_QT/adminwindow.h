@@ -2,6 +2,10 @@
 #define ADMINWINDOW_H
 
 #include <QDialog>
+#include <QFile>
+#include <QTextStream>
+#include <QMessageBox>
+#include "header.h"
 
 namespace Ui {
 class AdminWindow;
@@ -16,14 +20,19 @@ public:
     ~AdminWindow();
 
 private slots:
-    void on_Done_released();
-
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_Exit_clicked();
+
+    void on_AddWinery_clicked();
+
+    void on_AddWine_clicked();
+
+    void on_updateprice_clicked();
 
 private:
     Ui::AdminWindow *ui;
+    Wineries winery;
 };
 
 #endif // ADMINWINDOW_H
