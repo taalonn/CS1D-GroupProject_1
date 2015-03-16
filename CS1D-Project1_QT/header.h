@@ -6,6 +6,7 @@
 #include <vector>
 #include <fstream>
 #include <QString>
+#include <QDebug>
 #include "wineriesHeader.h"
 #include "ShoppingCart.h"
 using namespace std;

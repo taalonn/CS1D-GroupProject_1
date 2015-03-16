@@ -132,7 +132,7 @@
     <string>Update Price</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>510</x>
@@ -254,22 +254,5 @@
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>AddWinery</sender>
-   <signal>clicked()</signal>
-   <receiver>pushButton</receiver>
-   <slot>click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>444</x>
-     <y>482</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>457</x>
-     <y>367</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

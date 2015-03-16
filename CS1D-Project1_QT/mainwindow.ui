@@ -720,7 +720,7 @@
        <pixmap resource="Res2.qrc">:/1/Winery.png</pixmap>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>260</x>
@@ -890,7 +890,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -1033,13 +1033,10 @@
      <zorder>label_12</zorder>
      <zorder>layoutWidget</zorder>
      <zorder>Current</zorder>
-     <zorder>Buy</zorder>
      <zorder>toolBox</zorder>
      <zorder>label_7</zorder>
-     <zorder>NextUp</zorder>
      <zorder>Cart</zorder>
      <zorder>label_11</zorder>
-     <zorder>EndEarly</zorder>
      <zorder>layoutWidget</zorder>
     </widget>
     <widget class="QWidget" name="AdminTab">
@@ -1382,5 +1379,22 @@
  <resources>
   <include location="Res2.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>AdminLoginButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>348</x>
+     <y>325</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

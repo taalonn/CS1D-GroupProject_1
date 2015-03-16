@@ -4,11 +4,14 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <map>
 #include <limits>
 #include <ios>
 #include <windows.h>
+#include <QDebug>
+#include <QString>
 using namespace std;
 
 //information holding the vintage (year) and price of bottle
@@ -59,6 +62,14 @@ class Wineries {
         //making the data persistent between executions
         void updateList();
 
+        //methods for the shopping cart
+        //will take a wine, purchase price and an amount and add it to an output
+        void updateOutput(string wine, float purchase, int amount);
+        //a header that will preface the wine with where it was purchased at
+        void winePurchacedAt(int wineryNumber);
+        //returns a string formatted with all the wine purchase information
+        string getOutput();
+
 //ACCESSORS///////////////////////////////////////////////////////////////////
         //returns the name of the passed in winery number
         string nameOf(int wineryNumber) const;
@@ -94,6 +105,9 @@ private:
             vector<wineryInfo> listOfWineries;
             vector<wineryInfo>::iterator it;
             int totalWineries;
+            //data members for the shopping cart
+            float  total;
+            string out;
 };
 #endif /* Wineries_H_ */
 

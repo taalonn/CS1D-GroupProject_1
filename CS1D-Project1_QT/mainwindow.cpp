@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QFile file(":/textfiles/WineriesInfo.txt");
+    QFile file("WineriesInfo.txt");
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
         QMessageBox::warning(0,"Cannot Open", file.errorString());
@@ -51,7 +51,7 @@ void MainWindow::on_AdminLoginButton_clicked()
 
             Wineries winery2;
             wineryList = winery2;
-            QFile file(":/textfiles/WineriesInfo.txt");
+            QFile file("WineriesInfo.txt");
             if(!file.open(QFile::ReadOnly | QFile::Text))
             {
                 QMessageBox::warning(0,"Cannot Open", file.errorString());

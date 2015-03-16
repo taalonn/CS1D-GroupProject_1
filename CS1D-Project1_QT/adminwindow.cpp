@@ -6,7 +6,7 @@ AdminWindow::AdminWindow(QWidget *parent) :
     ui(new Ui::AdminWindow)
 {
     ui->setupUi(this);
-    QFile file(":/textfiles/WineriesInfo.txt");
+    QFile file("WineriesInfo.txt");
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
         QMessageBox::warning(0,"Cannot Open", file.errorString());
@@ -17,6 +17,11 @@ AdminWindow::AdminWindow(QWidget *parent) :
         ui->infoedit->setText(in.readAll());
     }
     file.close();
+
+    QString test;
+    test.fromStdString(winery.nameOf(0));
+    qDebug() << test;
+    ui->name->setText(test);
 }
 
 AdminWindow::~AdminWindow()
@@ -32,7 +37,7 @@ void AdminWindow::on_Exit_clicked()
 
 void AdminWindow::on_pushButton_clicked()
 {
-    QFile file(":/textfiles/WineriesInfo.txt");
+    QFile file("WineriesInfo.txt");
     if(!file.open(QFile::WriteOnly | QFile::Text))
     {
         QMessageBox::warning(0,"Cannot Write", file.errorString());
@@ -42,6 +47,7 @@ void AdminWindow::on_pushButton_clicked()
         QTextStream out(&file);
         out << ui->infoedit->toPlainText();
     }
+    file.flush();
     file.close();
 }
 

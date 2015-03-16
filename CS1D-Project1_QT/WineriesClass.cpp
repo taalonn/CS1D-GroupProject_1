@@ -9,9 +9,10 @@
 //Class
 Wineries::Wineries()
 {
+    QString test;
     int currentWineryNumber = 1;
     ifstream inFile;
-    inFile.open(":/textfiles/wineries.txt");
+    inFile.open("wineries.txt");
     totalWineries = 0;
 
     //taking in the total wineries from the first line to start the program
@@ -20,12 +21,16 @@ Wineries::Wineries()
 
     for(int infile = 0; infile < totalWineries; infile++)
     {
+
         //creating a new Winery to hold all the information about to be
         //taken in from the input file
         wineryInfo newWinery;
 
         //getting winery name
         getline(inFile, newWinery.name);
+
+        test.fromStdString(newWinery.name);
+        qDebug() << test;
 
         //setting winery number
         newWinery.ownNumber = currentWineryNumber;
@@ -90,6 +95,45 @@ Wineries::~Wineries(){}
 
 ////MUTATORS//////////////////////////////////////////////////////////////////
 
+//the creation of a new Wineries class will fill the header for the shopping
+//cart data "out". NOTE: YOU MUST TELL THE CART WHICH WINERY YOU GOT THE WINE
+//FROM FIRST BEFORE USING THIS UPDATE OUTPUT METHOD.
+void Wineries::updateOutput(string wine, float purchase, int amount)
+{
+    ostringstream update;
+    update << out;
+    update << left << setprecision(2) << fixed << setw(3) << amount
+           << "  "
+           << setw(9) << wine
+           << "  " << setw(6) << purchase*amount << endl;
+    out = update.str();
+
+    total += purchase * amount;
+}//end - update output
+
+//this will tell the reciept where the wine was purchased at at a header to
+//the wine that was purchased.
+void Wineries::winePurchacedAt(int wineryNumber)
+{
+    ostringstream update;
+    update << out;
+    update << endl << "Purchased at: " << nameOf(wineryNumber) << endl;
+    out = update.str();
+}//end - winePurchasedAt
+
+//return a formatted string for output. NOTE: YOU CANNOT USE THIS METHOD MORE
+//THAN ONCE FOR OUTPUT AS IT WILL PUT AN ENDING CAP ON THE STRING OF TEXT AND
+//PLACE A TOTAL PRICE AT THE BOTTOM.
+string Wineries::getOutput()
+{
+     ostringstream update;
+     update << out;
+     update << setprecision(2) << fixed;
+     update << "---------------------\n"
+            << "Total: $ " << total;
+     out = update.str() + "\n";
+     return out;
+}//end - getOutput
 
 //pushing the passed in winery to the class' vector AND updating the text
 //file holding all the wineries.
@@ -164,9 +208,9 @@ void Wineries::updateList()
     //opening, overwriting and closing the winery list file
     ofstream newFile;
 
-    remove(":/textfiles/wineries.txt");
+    remove("wineries.txt");
 
-    newFile.open(":/textfiles/wineries.txt");
+    newFile.open("wineries.txt");
 
     newFile << updateStr.str();
 
@@ -237,8 +281,6 @@ string Wineries::print( int wineryNumber ) const
 {
     stringstream returnStr;
 
-
-
     if(!isEmpty())
     {
         if(wineryNumber > 0 && wineryNumber <= totalWineries)
@@ -246,16 +288,18 @@ string Wineries::print( int wineryNumber ) const
             returnStr << listOfWineries[wineryNumber].name << "\n"
                       << "\n" << "WINES OFFERED:";
 
-//            //for adding all the wines offered by the winery
-//            map<string, bottleInfo>::iterator it = listOfWineries[wineryNumber].offeredWineInfo.begin();
-//             //adding wine informaiton
-//             for(;it != listOfWineries[wineryNumber].offeredWineInfo.end(); it++)
-//             {
-//                 returnStr << endl;
-//                 returnStr << it->first                  << endl
-//                           << "\t" << it->second.vintage << endl
-//                           << "\t" << it->second.price;
-//             }
+//            //adding all the wines offered for that winery
+//            map<string, bottleInfo>::iterator
+//                                 it2 = listOfWineries[wineryNumber].offeredWineInfo.begin();
+
+//            //adding wine informaiton
+//            for(;it2 != listOfWineries[wineryNumber].offeredWineInfo.end(); it2++)
+//            {
+//                returnStr << endl;
+//                returnStr << it2->first          << endl
+//                          << it2->second.vintage << endl
+//                          << it2->second.price;
+//            }//end - for it
 
         }
         else
