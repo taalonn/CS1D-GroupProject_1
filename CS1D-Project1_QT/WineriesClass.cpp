@@ -29,9 +29,6 @@ Wineries::Wineries()
         //getting winery name
         getline(inFile, newWinery.name);
 
-        test.fromStdString(newWinery.name);
-        qDebug() << test;
-
         //setting winery number
         newWinery.ownNumber = currentWineryNumber;
 
@@ -277,7 +274,7 @@ int Wineries::totWineries() const
 
 //passes out the information for the winery passed in. passes error if out of
 //bounds of if there are no wineries in the list
-string Wineries::print( int wineryNumber ) const
+string Wineries::print( int wineryNumber )
 {
     stringstream returnStr;
 
@@ -285,21 +282,21 @@ string Wineries::print( int wineryNumber ) const
     {
         if(wineryNumber > 0 && wineryNumber <= totalWineries)
         {
-            returnStr << listOfWineries[wineryNumber].name << "\n"
-                      << "\n" << "WINES OFFERED:";
+            returnStr << listOfWineries[wineryNumber-1].name << "\n"
+                      << "\n" << "WINES OFFERED:\n";
 
-//            //adding all the wines offered for that winery
-//            map<string, bottleInfo>::iterator
-//                                 it2 = listOfWineries[wineryNumber].offeredWineInfo.begin();
+            //adding all the wines offered for that winery
+            map<string, bottleInfo>::iterator
+                                 it3 = listOfWineries[wineryNumber-1].offeredWineInfo.begin();
 
-//            //adding wine informaiton
-//            for(;it2 != listOfWineries[wineryNumber].offeredWineInfo.end(); it2++)
-//            {
-//                returnStr << endl;
-//                returnStr << it2->first          << endl
-//                          << it2->second.vintage << endl
-//                          << it2->second.price;
-//            }//end - for it
+            //adding wine informaiton
+            for(;it3 != listOfWineries[wineryNumber-1].offeredWineInfo.end(); it3++)
+            {
+                returnStr << endl;
+                returnStr << it3->first          << endl
+                          << "\tvintage: " << it3->second.vintage << endl
+                          << "\tprice: " << it3->second.price;
+            }//end - for it
 
         }
         else
@@ -317,18 +314,18 @@ string Wineries::print( int wineryNumber ) const
 
 //calling print for every winery in the classes list of total wineries.
 //the following method will return a string of nicely formatted winery info
-string Wineries::printAll() const
-{
-    string returnStr;
-    //running through and calling print for every winery in the vector
-    //NOTE: STARTING FROM 1 GOING TO MAX WINERIES
-    for(int i = 1; i <= totalWineries; i++)
-    {
-        returnStr += print(i);
-    }
+//string Wineries::printAll() const
+//{
+//    string returnStr;
+//    //running through and calling print for every winery in the vector
+//    //NOTE: STARTING FROM 1 GOING TO MAX WINERIES
+//    for(int i = 1; i <= totalWineries; i++)
+//    {
+//        returnStr += print(i);
+//    }
 
-    return returnStr;
-}//end - printAll
+//    return returnStr;
+//}//end - printAll
 
 //return true is there are no wineries in the list
 bool Wineries::isEmpty( ) const

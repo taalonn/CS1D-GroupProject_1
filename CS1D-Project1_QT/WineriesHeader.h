@@ -76,7 +76,7 @@ class Wineries {
 
         //returns the contents of the passed in winery number (Formatted in
         //a string)
-        string print(int wineryNumber) const;
+        string print(int wineryNumber);
 
         //returns the contents of every winery currently in the list
         //(formatted as a string).

@@ -17,11 +17,6 @@ AdminWindow::AdminWindow(QWidget *parent) :
         ui->infoedit->setText(in.readAll());
     }
     file.close();
-
-    QString test;
-    test.fromStdString(winery.nameOf(0));
-    qDebug() << test;
-    ui->name->setText(test);
 }
 
 AdminWindow::~AdminWindow()
@@ -35,6 +30,7 @@ void AdminWindow::on_Exit_clicked()
     this->close();
 }
 
+//this is for the wineryinfo update
 void AdminWindow::on_pushButton_clicked()
 {
     QFile file("WineriesInfo.txt");
@@ -46,6 +42,8 @@ void AdminWindow::on_pushButton_clicked()
     {
         QTextStream out(&file);
         out << ui->infoedit->toPlainText();
+        QMessageBox::information(0,"Updated", "The info has been updated.");
+
     }
     file.flush();
     file.close();
@@ -57,6 +55,7 @@ void AdminWindow::on_AddWinery_clicked()
     QString dist;
     QString d;
     wineryInfo temp;
+    int index = 0;
     bool good = false;
 
     temp.ownNumber = winery.totWineries() + 1;
@@ -68,21 +67,25 @@ void AdminWindow::on_AddWinery_clicked()
     //parse the text edit into distances
     for(int ind = 0;ind < temp.ownNumber; ind++)
     {
-        while(!dist.isEmpty() && dist[0] != '\n')
+        while(index < dist.size() && dist[index] != '\n')
         {
-            d.push_back(dist[0]);
-            dist.remove(0,1);
+            d.push_back(dist[index]);
+            index++;
         }
         temp.otherWineryDistInfo[ind+1] = d.toFloat(&good);
-        dist.remove(0,1);
+        d.clear();
+        index++;
 
-        if(dist.isEmpty() && ind < temp.ownNumber -1)
+        if(index >= dist.size() && ind < temp.ownNumber -1)
             good = false;
     }
 
     //adds the winery if good or outputs an error
     if(good)
+    {
         winery.addWinery(temp);
+        QMessageBox::information(0,"Added", "The winery has been added.");
+    }
     else
         QMessageBox::warning(0,"Error", "There was a problem with the data you entered."
                                         "\nThe data was not saved.");
@@ -119,7 +122,10 @@ void AdminWindow::on_AddWine_clicked()
         {
             vint = vintQ.toInt(&good);   //converts and checks for valid float
             if(good)
+            {
                 winery.addWine(num, name, vint, price); //add the wine
+                QMessageBox::information(0,"Added", "The wine has been added.");
+            }
         }
     }
     //if any of the above checks fail output
@@ -154,6 +160,8 @@ void AdminWindow::on_updateprice_clicked()
         if(good)
         {
             winery.changeWinePrice(num, name, price); //updates price
+            QMessageBox::information(0,"Updated", "The price has been updated.");
+
         }
     }
     //if any of the above checks fail output

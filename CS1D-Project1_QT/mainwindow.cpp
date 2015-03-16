@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setCentralWidget(ui->tabWidget);
     QFile file("WineriesInfo.txt");
     if(!file.open(QFile::ReadOnly | QFile::Text))
     {
@@ -28,8 +29,10 @@ void MainWindow::UpdateCurrent()
 {
     QString updater;
     string s;
+    updater = updater.setNum(wineryList.tour.front());
+    qDebug() << updater;
     s = wineryList.print(wineryList.tour.front());
-    updater.fromStdString(s);
+    updater = updater.fromStdString(s);
     ui->Current->setText(updater);
 }
 
