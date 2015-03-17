@@ -41,9 +41,12 @@ private slots:
 
     void on_actionContact_Us_triggered();
 
+    void on_Buy_clicked();
+
 private:
     Ui::MainWindow *ui;
     int attemptsLeft = 3;
+    bool firstwine = true;
 };
 
 #endif // MAINWINDOW_H

@@ -20,7 +20,6 @@ SOURCES += main.cpp\
     contact.cpp
 
 HEADERS  += mainwindow.h \
-    shoppingCart.h \
     header.h \
     WineriesHeader.h \
     adminwindow.h \

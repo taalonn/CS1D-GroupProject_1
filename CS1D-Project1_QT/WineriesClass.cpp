@@ -9,6 +9,7 @@
 //Class
 Wineries::Wineries()
 {
+    total = 0;
     QString test;
     int currentWineryNumber = 1;
     ifstream inFile;
@@ -95,42 +96,32 @@ Wineries::~Wineries(){}
 //the creation of a new Wineries class will fill the header for the shopping
 //cart data "out". NOTE: YOU MUST TELL THE CART WHICH WINERY YOU GOT THE WINE
 //FROM FIRST BEFORE USING THIS UPDATE OUTPUT METHOD.
-void Wineries::updateOutput(string wine, float purchase, int amount)
+void Wineries::Purchase(string wine, int quantity, bool &firstW)
 {
+    QString Q;
     ostringstream update;
-    update << out;
-    update << left << setprecision(2) << fixed << setw(3) << amount
-           << "  "
-           << setw(9) << wine
-           << "  " << setw(6) << purchase*amount << endl;
-    out = update.str();
+    wineryInfo temp = listOfWineries[tour.front()-1];
+    map<string,bottleInfo>::iterator bottle;
 
-    total += purchase * amount;
+    bottle = temp.offeredWineInfo.find(wine);
+
+    if(bottle != temp.offeredWineInfo.end())
+    {
+        if(firstW)
+        {
+            update << temp.name << endl;
+            firstW = false;
+        }
+        update << right << setw(5) << quantity
+               << left << "x " << wine << endl;
+
+        total += bottle->second.price * quantity;
+        out = update.str();
+        Q = Q.fromStdString(out);
+        cart += Q;
+    }
+
 }//end - update output
-
-//this will tell the reciept where the wine was purchased at at a header to
-//the wine that was purchased.
-void Wineries::winePurchacedAt(int wineryNumber)
-{
-    ostringstream update;
-    update << out;
-    update << endl << "Purchased at: " << nameOf(wineryNumber) << endl;
-    out = update.str();
-}//end - winePurchasedAt
-
-//return a formatted string for output. NOTE: YOU CANNOT USE THIS METHOD MORE
-//THAN ONCE FOR OUTPUT AS IT WILL PUT AN ENDING CAP ON THE STRING OF TEXT AND
-//PLACE A TOTAL PRICE AT THE BOTTOM.
-string Wineries::getOutput()
-{
-     ostringstream update;
-     update << out;
-     update << setprecision(2) << fixed;
-     update << "---------------------\n"
-            << "Total: $ " << total;
-     out = update.str() + "\n";
-     return out;
-}//end - getOutput
 
 //pushing the passed in winery to the class' vector AND updating the text
 //file holding all the wineries.
@@ -242,6 +233,22 @@ void Wineries::changeWinePrice(int wineryNum, string wineName, float newPrice)
 
 
 ////ACCESSORS/////////////////////////////////////////////////////////////////
+//returns the cart
+QString Wineries::Checkout()
+{
+    return cart;
+}
+
+//returns the total price for output
+QString Wineries::TotalPrice()
+{
+    QString Q;
+    ostringstream update;
+    update << "$ " << fixed << setprecision(2) << total;
+    out = update.str();
+    return Q.fromStdString(out);
+}
+
 //returns the name of the passed in winery number as a string
 string Wineries::nameOf(int wineryNumber) const
 {
@@ -294,8 +301,8 @@ string Wineries::print( int wineryNumber )
             {
                 returnStr << endl;
                 returnStr << it3->first          << endl
-                          << "\tvintage: " << it3->second.vintage << endl
-                          << "\tprice: " << it3->second.price;
+                          << "   vintage: " << it3->second.vintage << endl
+                          << "   price: " << it3->second.price;
             }//end - for it
 
         }
@@ -311,21 +318,6 @@ string Wineries::print( int wineryNumber )
 
     return returnStr.str();
 }//end - print
-
-//calling print for every winery in the classes list of total wineries.
-//the following method will return a string of nicely formatted winery info
-//string Wineries::printAll() const
-//{
-//    string returnStr;
-//    //running through and calling print for every winery in the vector
-//    //NOTE: STARTING FROM 1 GOING TO MAX WINERIES
-//    for(int i = 1; i <= totalWineries; i++)
-//    {
-//        returnStr += print(i);
-//    }
-
-//    return returnStr;
-//}//end - printAll
 
 //return true is there are no wineries in the list
 bool Wineries::isEmpty( ) const

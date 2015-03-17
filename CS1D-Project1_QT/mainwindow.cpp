@@ -29,8 +29,6 @@ void MainWindow::UpdateCurrent()
 {
     QString updater;
     string s;
-    updater = updater.setNum(wineryList.tour.front());
-    qDebug() << updater;
     s = wineryList.print(wineryList.tour.front());
     updater = updater.fromStdString(s);
     ui->Current->setText(updater);
@@ -90,7 +88,7 @@ void MainWindow::on_EndEarly_clicked()
         }
         ui->toolBox->setEnabled(true);
     }
-
+    firstwine = true;
 }
 
 void MainWindow::on_NextUp_clicked()
@@ -106,6 +104,7 @@ void MainWindow::on_NextUp_clicked()
         ui->toolBox->setEnabled(true);
         ui->Current->clear();
     }
+    firstwine = true;
 }
 
 void MainWindow::on_FullTour_clicked()
@@ -113,6 +112,8 @@ void MainWindow::on_FullTour_clicked()
     wineryList.visitAll();
     UpdateCurrent();
     ui->toolBox->setEnabled(false);
+    ui->totalout->clear();
+    ui->Cart->clear();
 }
 
 
@@ -134,6 +135,8 @@ void MainWindow::on_QuickTour_clicked()
             wineryList.findRoute(start, numtovisit);
             UpdateCurrent();
             ui->toolBox->setEnabled(false);
+            ui->totalout->clear();
+            ui->Cart->clear();
         }
     }
     if(!good)
@@ -146,20 +149,21 @@ void MainWindow::on_CustomTour_clicked()
 {
     QString in;
     QString temp;
+    int index = 0;
     int store;
     vector<int> selections;
     bool good = false;
 
     in = ui->CustomList->toPlainText();
 
-    while(!in.isEmpty())
+    while(index < in.size())
     {
-        while(in[0] != ' ' && in[0] != ',' && in[0] != '\n')
+        while(index < in.size() && in[index] != ' ' && in[index] != ',' && in[index] != '\n')
         {
-            temp.push_back(in[0]);
-            in.remove(0,1);
+            temp.push_back(in[index]);
+            index++;
         }
-        in.remove(0,1);
+        index++;
         store = temp.toInt(&good);
         if(good && store > 0 && store <= wineryList.totWineries())
             selections.push_back(store);
@@ -171,10 +175,31 @@ void MainWindow::on_CustomTour_clicked()
         wineryList.findSpecificRoute(selections);
         UpdateCurrent();
         ui->toolBox->setEnabled(false);
+        ui->totalout->clear();
+        ui->Cart->clear();
     }
 }
 
 void MainWindow::on_actionContact_Us_triggered()
 {
     MeetUs.show();
+}
+
+//buys bottles of wine
+void MainWindow::on_Buy_clicked()
+{
+    QString namein;
+    string  nameout;
+    int num;
+
+    namein = ui->buyname->text();
+    num = ui->buynum->value();
+    nameout = namein.toStdString();
+
+    if(num > 0 && !wineryList.tour.empty())
+    {
+        wineryList.Purchase(nameout, num, firstwine);
+        ui->Cart->setText(wineryList.Checkout());
+        ui->totalout->setText(wineryList.TotalPrice());
+    }
 }

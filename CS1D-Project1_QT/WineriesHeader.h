@@ -64,13 +64,14 @@ class Wineries {
 
         //methods for the shopping cart
         //will take a wine, purchase price and an amount and add it to an output
-        void updateOutput(string wine, float purchase, int amount);
-        //a header that will preface the wine with where it was purchased at
-        void winePurchacedAt(int wineryNumber);
-        //returns a string formatted with all the wine purchase information
-        string getOutput();
+        void Purchase(string wine, int quantity, bool &firstW);
 
 //ACCESSORS///////////////////////////////////////////////////////////////////
+        //returns the cart
+        QString Checkout();
+        //returns the total price for output
+        QString TotalPrice();
+
         //returns the name of the passed in winery number
         string nameOf(int wineryNumber) const;
 
@@ -108,6 +109,7 @@ private:
             //data members for the shopping cart
             float  total;
             string out;
+            QString cart;
 };
 #endif /* Wineries_H_ */
 
