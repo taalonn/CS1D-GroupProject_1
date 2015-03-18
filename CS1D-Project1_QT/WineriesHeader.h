@@ -66,6 +66,11 @@ class Wineries {
         //will take a wine, purchase price and an amount and add it to an output
         void Purchase(string wine, int quantity, bool &firstW);
 
+        //travels a distance
+        void Travel(flaot add);
+
+        void Next();
+
 //ACCESSORS///////////////////////////////////////////////////////////////////
         //returns the cart
         QString Checkout();
@@ -100,6 +105,9 @@ class Wineries {
         //finding the route based on the users list of wineries
         void findSpecificRoute( vector<int> alloptions );
 
+        //returns distance traveled
+        float TotDist();
+
         queue<int> tour;
 
 private:
@@ -108,6 +116,7 @@ private:
             int totalWineries;
             //data members for the shopping cart
             float  total;
+            float traveled;
             string out;
             QString cart;
 };

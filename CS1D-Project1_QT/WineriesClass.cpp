@@ -231,6 +231,20 @@ void Wineries::changeWinePrice(int wineryNum, string wineName, float newPrice)
     listOfWineries[wineryNum - 1].offeredWineInfo[wineName].price = newPrice;
 }
 
+//travel a distance
+void Wineries::Travel(float add)
+{
+    traveled += add;
+}
+
+void Wineries::Next()
+{
+    int temp;
+    temp = tour.front();
+    tour.pop();
+    listOfWineries[temp-1].otherWineryDistInfo(tour.front())
+}
+
 
 ////ACCESSORS/////////////////////////////////////////////////////////////////
 //returns the cart
@@ -337,6 +351,7 @@ void Wineries::findRoute(int currWinery, int numWineries)
     float shortest;
     float test;
     int next;
+    traveled = 0;
 
     for(index = 0; index < totWineries(); index++)
     {
@@ -414,6 +429,7 @@ void Wineries::findSpecificRoute(vector<int> alloptions)
     int next;
     int closestWinerytoCanyonVilla;
     float shortest = 100;
+    traveled = 0;
 
         for(eraser = alloptions.begin(); eraser < alloptions.end(); eraser++)
         {
@@ -463,3 +479,9 @@ void Wineries::findSpecificRoute(vector<int> alloptions)
     }
 
 }//end - findSpecificRoute
+
+//returns distance traveled
+float Wineries::TotDist()
+{
+    return traveled;
+}
