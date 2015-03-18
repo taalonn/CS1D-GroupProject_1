@@ -132,6 +132,30 @@ void Wineries::Purchase(string wine, int quantity, bool &firstW)
 
 }//end - update output
 
+void Wineries::LastSubTotal()
+{
+    QString Q;
+    ostringstream update;
+
+    if(totalForOne != 0)
+    {
+        update << "\tSub total: $" << left << fixed
+               << setprecision(2) << totalForOne << endl;
+        totalForOne = 0;
+        update.unsetf(ios::fixed);
+        update << setprecision(6);
+    }
+
+    out = update.str();
+    Q = Q.fromStdString(out);
+    cart += Q;
+}
+
+void Wineries::ResetCart()
+{
+    cart.clear();
+}
+
 //pushing the passed in winery to the class' vector AND updating the text
 //file holding all the wineries.
 void Wineries::addWinery(wineryInfo newWinery)
@@ -365,6 +389,7 @@ void Wineries::findRoute(int currWinery, int numWineries)
     int next;
     traveled = 0;
     totalForOne = 0;
+    cart.clear();
 
     traveled += listOfWineries[currWinery-1].otherWineryDistInfo[currWinery];
 
@@ -446,6 +471,7 @@ void Wineries::findSpecificRoute(vector<int> alloptions)
     float shortest = 100;
     traveled = 0;
     totalForOne = 0;
+    cart.clear();
 
     for(eraser = alloptions.begin(); eraser < alloptions.end(); eraser++)
     {

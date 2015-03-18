@@ -44,6 +44,7 @@ void MainWindow::on_AdminLoginButton_clicked()
     name = ui->username->text();
     pass = ui->password->text();
     ui->EndEarly->click();
+    ui->password->clear();
 
     if(attemptsLeft > 0)
     {
@@ -90,6 +91,8 @@ void MainWindow::on_EndEarly_clicked()
             wineryList.tour.pop();
         }
         ui->toolBox->setEnabled(true);
+        wineryList.LastSubTotal();
+        ui->Cart->setText(wineryList.Checkout());
     }
     firstwine = true;
 }
@@ -103,6 +106,8 @@ void MainWindow::on_NextUp_clicked()
     }
     else
     {
+        wineryList.LastSubTotal();
+        ui->Cart->setText(wineryList.Checkout());
         QMessageBox::information(this, "Finished", "You Finished your tour, see you next time!");
         ui->toolBox->setEnabled(true);
         ui->Current->clear();

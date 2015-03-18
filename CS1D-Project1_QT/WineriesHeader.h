@@ -66,8 +66,12 @@ class Wineries {
         //will take a wine, purchase price and an amount and add it to an output
         void Purchase(string wine, int quantity, bool &firstW);
 
+        void LastSubTotal();
+
         //travels a distance
         void Travel(float add);
+
+        void ResetCart();
 
         void Next();
 

@@ -299,7 +299,7 @@
        <number>1</number>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="tabSpacing">
        <number>6</number>
@@ -309,8 +309,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>221</width>
-         <height>140</height>
+         <width>100</width>
+         <height>30</height>
         </rect>
        </property>
        <attribute name="label">
@@ -1489,7 +1489,6 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="actionCommon_Help_Topics"/>
     <addaction name="actionContact_Us"/>
    </widget>
    <addaction name="menuHelp"/>

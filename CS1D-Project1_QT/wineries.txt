@@ -1,4 +1,4 @@
-10
+11
 Adelaida Cellars
 1 8
 2 13.2
@@ -10,6 +10,7 @@ Adelaida Cellars
 8 6.9
 9 11.2
 10 3.5
+11 11.5
 3
 Cabernet Sauvignon
 2000
@@ -19,7 +20,7 @@ Old Vines Zinfandel
 19.5
 Zinfandel
 2002
-14
+50
 
 Castoro Cellars
 1 13.2
@@ -32,6 +33,7 @@ Castoro Cellars
 8 9.3
 9 5.2
 10 11
+11 14.2
 4
 Estate Chardonnay
 2001
@@ -57,6 +59,7 @@ Chumeia
 8 18.3
 9 17.2
 10 17.2
+11 13.4
 2
 Pinot Noir
 2001
@@ -76,6 +79,7 @@ Eberle Winery
 8 14.3
 9 13.2
 10 13.2
+11 16.5
 3
 Chardonnay
 2002
@@ -98,6 +102,7 @@ Jan Kris Winery
 8 8.4
 9 5.1
 10 12.1
+11 3.3
 2
 Zinfandel
 2002
@@ -117,6 +122,7 @@ L'Aventure
 8 11.1
 9 5.1
 10 14.2
+11 12.2
 1
 Optimus
 2001
@@ -133,6 +139,7 @@ Norman Vineyards
 8 0.7
 9 5.8
 10 4
+11 7.8
 4
 Barbera
 2002
@@ -158,6 +165,7 @@ Opolo Vineyards
 8 12.75
 9 5.7
 10 4.7
+11 6.9
 3
 Pinot Noir
 2001
@@ -180,6 +188,7 @@ Pipestone Vineyards
 8 5.7
 9 9.19
 10 9.5
+11 8.2
 3
 Shiraz
 2002
@@ -202,6 +211,7 @@ Tablas Creek Vineyard
 8 4.7
 9 9.5
 10 14.54
+11 6.11
 3
 Cote de Blanc
 2002
@@ -212,3 +222,23 @@ Cote de Rouge
 Roussane
 2002
 14.5
+
+Cass Winery
+1 11.5
+2 14.2
+3 13.4
+4 16.5
+5 3.3
+6 12.2
+7 7.8
+8 6.9
+9 8.2
+10 6.11
+11 10.1
+2
+Roussanne
+2013
+22.5
+Viognier
+2013
+12.5
