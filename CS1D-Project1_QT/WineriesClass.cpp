@@ -10,6 +10,7 @@
 Wineries::Wineries()
 {
     total = 0;
+    totalForOne = 0;
     QString test;
     int currentWineryNumber = 1;
     ifstream inFile;
@@ -109,13 +110,21 @@ void Wineries::Purchase(string wine, int quantity, bool &firstW)
     {
         if(firstW)
         {
+            if(totalForOne != 0)
+            {
+                update << "\tSub total: $" << left << fixed
+                       << setprecision(2) << totalForOne << endl;
+                totalForOne = 0;
+            }
             update << temp.name << endl;
             firstW = false;
         }
-        update << right << setw(5) << quantity
+        update.unsetf(ios::fixed);
+        update << right << setprecision(6) << setw(5) << quantity
                << left << "x " << wine << endl;
 
         total += bottle->second.price * quantity;
+        totalForOne += bottle->second.price * quantity;
         out = update.str();
         Q = Q.fromStdString(out);
         cart += Q;
@@ -242,7 +251,10 @@ void Wineries::Next()
     int temp;
     temp = tour.front();
     tour.pop();
-    listOfWineries[temp-1].otherWineryDistInfo(tour.front())
+    if(!tour.empty())
+    {
+        traveled += listOfWineries[temp-1].otherWineryDistInfo[tour.front()];
+    }
 }
 
 
@@ -352,6 +364,9 @@ void Wineries::findRoute(int currWinery, int numWineries)
     float test;
     int next;
     traveled = 0;
+    totalForOne = 0;
+
+    traveled += listOfWineries[currWinery-1].otherWineryDistInfo[currWinery];
 
     for(index = 0; index < totWineries(); index++)
     {
@@ -430,18 +445,21 @@ void Wineries::findSpecificRoute(vector<int> alloptions)
     int closestWinerytoCanyonVilla;
     float shortest = 100;
     traveled = 0;
+    totalForOne = 0;
 
-        for(eraser = alloptions.begin(); eraser < alloptions.end(); eraser++)
+    for(eraser = alloptions.begin(); eraser < alloptions.end(); eraser++)
+    {
+        index = *eraser -1;
+        if(listOfWineries[index].otherWineryDistInfo[index+1] < shortest)
         {
-            index = *eraser -1;
-            if(listOfWineries[index].otherWineryDistInfo[index+1] < shortest)
-            {
-                closestWinerytoCanyonVilla = index+1;
-                shortest = listOfWineries[index].otherWineryDistInfo[index+1];
-            }
+            closestWinerytoCanyonVilla = index+1;
+            shortest = listOfWineries[index].otherWineryDistInfo[index+1];
         }
+    }
 
-        currWinery = closestWinerytoCanyonVilla;
+    currWinery = closestWinerytoCanyonVilla;
+
+    traveled += listOfWineries[currWinery-1].otherWineryDistInfo[currWinery];
 
     while(!tour.empty())
     {
@@ -481,7 +499,14 @@ void Wineries::findSpecificRoute(vector<int> alloptions)
 }//end - findSpecificRoute
 
 //returns distance traveled
-float Wineries::TotDist()
+QString Wineries::TotDist()
 {
-    return traveled;
+    QString Q;
+    Q = Q.setNum(traveled);
+    return Q + " miles";
+}
+
+float Wineries::WineryTotal()
+{
+    return totalForOne;
 }

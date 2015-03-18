@@ -1,0 +1,89 @@
+﻿Winery 11 -
+Cass Winery: 10.1 miles to Canyon Villa
+Cass Vineyard and Winery is located in the rolling, oak-studded hills between Paso Robles and Creston on California's beauitful Central Coast. This area that the vineyard calls home offers quiet serenity for the visitor and an ideal growing enviroment for wine grapes
+
+Winery 12 - 
+Hunt Cellars: 6.6 miles to Canyon Villa 
+All Hunt Cellars wines are sold winery-direct through our tasting room, limited distribution, selected restaurants, and wine shops. Come visit the unspoiled charm and bucolic west side beauty of the Paso Robles region. Our warm and friendly staff will give you a Memorable Wine Experience.
+
+
+name of winery: Cass Winery
+1 11.5 
+2 14.2
+3 13.4
+4 16.5
+5 3.3
+6 12.2
+7 7.8
+8 6.9
+9 8.2
+10 6.11
+11 10.1
+
+8 wines offered
+
+Viognier
+2013
+12.50
+Roussanne
+2013 
+22.50
+Marsanne
+2013 
+19.87
+Oasis Rose
+2013 
+33.45
+Grenache
+2012 
+29.40
+Mourvedre
+2012 
+12.60
+Cabernet Sauvignon
+2011 
+50.45
+Desert Syrah
+2011
+17.99
+
+name of winery: Hunt Cellars
+1 13.8
+2 4.4
+3 18.1
+4 18.8
+5 0.8
+6 8.2
+7 10.8
+8 9.4
+9 5.5
+10 11.8
+11 3.7
+12 6.6
+
+3 wines offered
+
+Sauvignon Blanco
+2012
+12.44
+Estate Chardonnay
+2001
+18.00
+Zinfandel
+2012
+16.00
+
+
+name of winery: Adelaida Cellars
+Estate Chardonnay
+2001
+18.00
+
+
+
+
+
+
+
+
+

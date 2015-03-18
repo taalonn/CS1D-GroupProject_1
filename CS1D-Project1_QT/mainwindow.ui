@@ -299,7 +299,7 @@
        <number>1</number>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="tabSpacing">
        <number>6</number>
@@ -309,8 +309,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>221</width>
+         <height>140</height>
         </rect>
        </property>
        <attribute name="label">
@@ -418,8 +418,8 @@
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>98</width>
-         <height>28</height>
+         <width>221</width>
+         <height>140</height>
         </rect>
        </property>
        <attribute name="label">
@@ -430,7 +430,7 @@
          <rect>
           <x>10</x>
           <y>50</y>
-          <width>211</width>
+          <width>191</width>
           <height>16</height>
          </rect>
         </property>
@@ -438,7 +438,7 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>How many Wineries would you like to visit?</string>
+         <string>How many more would you like to visit?</string>
         </property>
        </widget>
        <widget class="QLabel" name="label_9">
@@ -1091,6 +1091,72 @@
        <string>Total Due:</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="TraveledDist">
+      <property name="geometry">
+       <rect>
+        <x>650</x>
+        <y>230</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>230</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>170</red>
+            <green>0</green>
+            <blue>0</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="WindowText">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>120</red>
+            <green>120</green>
+            <blue>120</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string>Total Distance Traveled:</string>
+      </property>
+     </widget>
      <zorder>label_12</zorder>
      <zorder>Current</zorder>
      <zorder>toolBox</zorder>
@@ -1106,6 +1172,8 @@
      <zorder>buynum</zorder>
      <zorder>totalout</zorder>
      <zorder>label</zorder>
+     <zorder>TraveledDist</zorder>
+     <zorder>label_5</zorder>
     </widget>
     <widget class="QWidget" name="AdminTab">
      <attribute name="title">

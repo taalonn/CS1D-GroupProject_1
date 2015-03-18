@@ -29,9 +29,11 @@ void MainWindow::UpdateCurrent()
 {
     QString updater;
     string s;
+    float t;
     s = wineryList.print(wineryList.tour.front());
     updater = updater.fromStdString(s);
     ui->Current->setText(updater);
+    ui->TraveledDist->setText(wineryList.TotDist());
 }
 
 void MainWindow::on_AdminLoginButton_clicked()
@@ -41,6 +43,7 @@ void MainWindow::on_AdminLoginButton_clicked()
 
     name = ui->username->text();
     pass = ui->password->text();
+    ui->EndEarly->click();
 
     if(attemptsLeft > 0)
     {
@@ -93,7 +96,7 @@ void MainWindow::on_EndEarly_clicked()
 
 void MainWindow::on_NextUp_clicked()
 {
-    wineryList.tour.pop();
+    wineryList.Next();
     if(!wineryList.tour.empty())
     {
         UpdateCurrent();
@@ -138,7 +141,12 @@ void MainWindow::on_QuickTour_clicked()
             ui->totalout->clear();
             ui->Cart->clear();
         }
+        else
+            good = false;
     }
+    else
+        good = false;
+
     if(!good)
     {
         QMessageBox::warning(this, "Error", "You have either entered a winery not on the list or to many wineries.");
